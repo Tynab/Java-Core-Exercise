@@ -13,125 +13,143 @@ public class YANMethod {
     private static Scanner scan = new Scanner(in);
 
     // Try parse int
-    public static boolean TryParseInt(String str, int num) {
-        var check = true;
+    public static boolean TryParse(String str, int n) {
+        var is_success = true;
         try {
-            num = parseInt(str);
+            n = parseInt(str);
         } catch (Exception e) {
-            check = false;
+            is_success = false;
         }
-        return check;
+        return is_success;
     }
 
     // Try parse float
-    public static boolean TryParseFloat(String str, float num) {
-        var check = true;
+    public static boolean TryParse(String str, float n) {
+        var is_success = true;
         try {
-            num = parseFloat(str);
+            n = parseFloat(str);
         } catch (Exception e) {
-            check = false;
+            is_success = false;
         }
-        return check;
+        return is_success;
     }
 
     // Scan int
     public static int ScanInt() {
-        var num = 0;
-        var str = scan.next();
-        if (TryParseInt(str, num)) {
-            num = parseInt(str);
+        var n = 0;
+        var s = scan.next();
+        if (TryParse(s, n)) {
+            n = parseInt(s);
         } else {
             PrintAdv(RED, "Dữ liệu bạn nhập không phải số nguyên, xin nhập lại: ", RESET);
-            num = ScanInt();
+            n = ScanInt();
         }
-        return num;
+        return n;
     }
 
     // Scan float
     public static float ScanFloat() {
-        var num = 0f;
-        var str = scan.next();
-        if (TryParseFloat(str, num)) {
-            num = parseFloat(str);
+        var n = 0f;
+        var s = scan.next();
+        if (TryParse(s, n)) {
+            n = parseFloat(s);
         } else {
             PrintAdv(RED, "Dữ liện bạn nhập không phải số, xin nhập lại: ", RESET);
-            num = ScanFloat();
+            n = ScanFloat();
         }
-        return num;
+        return n;
     }
 
-    // Check limit int
-    public static int CheckLimitInt(int min, int max) {
-        var num = ScanInt();
-        if (num < min || num > max) {
+    // Check ascending
+    public static boolean IsAscending(int... args) {
+        var is_success = true;
+        for (var i = 0; i < args.length - 1; i++) {
+            if (args[i] > args[i + 1]) {
+                is_success = false;
+                break;
+            }
+        }
+        return is_success;
+    }
+
+    // Check descending
+    public static boolean IsDescending(int... args) {
+        var is_success = true;
+        for (var i = 0; i < args.length - 1; i++) {
+            if (args[i] < args[i + 1]) {
+                is_success = false;
+                break;
+            }
+        }
+        return is_success;
+    }
+
+    // Number limit int
+    public static int NumLimit(int min, int max) {
+        var n = ScanInt();
+        if (n < min || n > max) {
             PrintAdv(RED, "Không xác định, xin nhập lại: ", RESET);
-            num = CheckLimitInt(min, max);
+            n = NumLimit(min, max);
         }
-        return num;
+        return n;
     }
 
-    // Check limit int
-    public static float CheckLimitFloat(float min, float max) {
-        var num = ScanFloat();
-        if (num < min || num > max) {
+    // Number limit float
+    public static float NumLimit(float min, float max) {
+        var n = ScanFloat();
+        if (n < min || n > max) {
             PrintAdv(RED, "Không xác định, xin nhập lại: ", RESET);
-            num = CheckLimitFloat(min, max);
+            n = NumLimit(min, max);
         }
-        return num;
+        return n;
     }
 
     // Print advanced
-    public static void PrintAdv(String str) {
-        var padding = (width - str.length()) / 2;
-        for (var i = 1; i <= padding; i++) {
+    public static void PrintAdv(String s) {
+        for (var i = 1; i <= (width - s.length()) / 2; i++) {
             out.print(" ");
         }
-        out.print(str);
+        out.print(s);
     }
 
-    // Print advanced
-    public static void PrintAdv(String color, String str) {
-        var padding = (width - str.length()) / 2;
-        for (var i = 1; i <= padding; i++) {
+    // Print advanced color
+    public static void PrintAdv(String cl, String s) {
+        for (var i = 1; i <= (width - s.length()) / 2; i++) {
             out.print(" ");
         }
-        out.print(color + str);
+        out.print(cl + s);
     }
 
-    // Print advanced
-    public static void PrintAdv(String color, String str, String reset) {
-        var padding = (width - str.length()) / 2;
-        for (var i = 1; i <= padding; i++) {
+    // Print advanced multi color
+    public static void PrintAdv(String cl, String s, String cl_follow) {
+        for (var i = 1; i <= (width - s.length()) / 2; i++) {
             out.print(" ");
         }
-        out.print(color + str + reset);
+        out.print(cl + s + cl_follow);
     }
 
     // Print line advanced
-    public static void PrintlnAdv(String str) {
-        var padding = (width - str.length()) / 2;
-        for (var i = 1; i <= padding; i++) {
+    public static void PrintlnAdv(String s) {
+        for (var i = 1; i <= (width - s.length()) / 2; i++) {
             out.print(" ");
         }
-        out.println(str);
+        out.println(s);
     }
 
-    // Print line advanced
-    public static void PrintlnAdv(String color, String str) {
-        var padding = (width - str.length()) / 2;
-        for (var i = 1; i <= padding; i++) {
+    // Print line advanced color
+    public static void PrintlnAdv(String cl, String s) {
+        for (var i = 1; i <= (width - s.length()) / 2; i++) {
             out.print(" ");
         }
-        out.println(color + str);
+        out.println(cl + s);
     }
 
-    // Print line advanced
-    public static void PrintlnAdv(String color, String str, String reset) {
-        var padding = (width - str.length()) / 2;
-        for (var i = 1; i <= padding; i++) {
+    // Print line advanced multi color
+    public static void PrintlnAdv(String cl, String s, String cl_follow) {
+        for (var i = 1; i <= (width - s.length()) / 2; i++) {
             out.print(" ");
         }
-        out.println(color + str + reset);
+        out.println(cl + s + cl_follow);
     }
 
     // Credit
@@ -141,14 +159,13 @@ public class YANMethod {
         PrintlnAdv("2. Không");
         PrintAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
-        return CheckLimitInt(1, 2);
+        return NumLimit(1, 2);
     }
 
     // Convert number to UTC
-    public static String NumToUTC(float num) {
-        var hour = (int) num;
-        var minute = (int) ((num - hour) * 60);
-        var header = num < 0 ? "GMT-" : "GMT+";
-        return format("%s%d:%02d", header, hour, minute);
+    public static String NumToUTC(float n) {
+        var hour = (int) n;
+        var minute = (int) ((n - hour) * 60);
+        return format("%s%d:%02d", n < 0 ? "GMT-" : "GMT+", hour, minute);
     }
 }

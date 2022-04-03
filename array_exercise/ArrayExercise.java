@@ -1,4 +1,4 @@
-package if_exercise;
+package array_exercise;
 
 import static java.lang.Integer.*;
 import static java.lang.String.*;
@@ -6,11 +6,11 @@ import static java.lang.System.*;
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 
-public class IfExercise1 {
+public class ArrayExercise {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "If Exersice 1");
+        PrintlnAdv(CYAN_BOLD, "Array Exersice");
         // content
         Main();
     }
@@ -18,7 +18,7 @@ public class IfExercise1 {
     // Main
     private static void Main() {
         // var
-        var nMax = 3;
+        var nMax = 10;
         var ns = new int[nMax];
         // cap
         out.println();
@@ -27,15 +27,29 @@ public class IfExercise1 {
             ns[i] = NumLimit(0, MAX_VALUE);
         }
         // output
-        PrintlnAdv(YELLOW, format("Kết luận: %s.\n", CheckOrder(ns)));
+        out.print(YELLOW);
+        CheckMirror(ns);
         // ctrl
         CheckOut();
     }
 
-    // Check order
-    private static String CheckOrder(int... args) {
-        return IsAscending(args) ? "xếp theo thứ tự tăng dần"
-                : IsDescending(args) ? "xếp theo thứ tự giảm dần" : "chưa được sắp xếp";
+    // Check mirror
+    private static void CheckMirror(int... args) {
+        // var
+        var is_success = false;
+        var max = args.length;
+        // pick
+        for (var i = 0; i < max / 2; i++) {
+            if (args[i] == args[max - 1 - i]) {
+                is_success = true;
+                PrintlnAdv(format("Số %d đối xứng ở cặp vị trí %d và %d.", args[i], i + 1, max - i));
+            }
+        }
+        // check back
+        if (!is_success) {
+            PrintlnAdv("Không có cặp số đối xứng nào.");
+        }
+        out.println();
     }
 
     // Check out

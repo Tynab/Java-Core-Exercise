@@ -11,20 +11,24 @@ import static yan_lib.YANMethod.*;
 
 public class InputExercise {
     public static void main(String[] args) {
+        // tit
         out.println();
-        PrintlnAdv(BLUE_BOLD, "Input Exersice");
+        PrintlnAdv(CYAN_BOLD, "Input Exersice");
+        // content
         Main();
     }
 
     // Main
     private static void Main() {
+        // cap
         out.println();
-        PrintAdv(GREEN, "Nhập vào múi giờ: ", YELLOW);
-        var time_zone = CheckLimitFloat(-11, 12);
-        var time_format = new SimpleDateFormat("HH:mm:ss");
-        time_format.setTimeZone(getTimeZone(NumToUTC(time_zone)));
-        var result = format("Hiện giờ là: %s.\n", time_format.format(new Date()));
-        PrintlnAdv(CYAN, result);
+        PrintAdv(GREEN, "Nhập vào múi giờ: ", RESET);
+        // format
+        var timeFormat = new SimpleDateFormat("HH:mm:ss");
+        timeFormat.setTimeZone(getTimeZone(NumToUTC(NumLimit(-11, 12))));
+        // output
+        PrintlnAdv(YELLOW, format("Hiện giờ là: %s\n", timeFormat.format(new Date())));
+        // ctrl
         CheckOut();
     }
 
