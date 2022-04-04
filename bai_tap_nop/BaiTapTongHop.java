@@ -36,7 +36,7 @@ public class BaiTapTongHop {
         PrintAdv(GREEN, "Giờ kết thúc: ", RESET);
         var checkout = OutLimit(checkin, 24);
         // process
-        var sum = ChiPhiNuoc(n) + TinhTienGio(checkin, checkout);
+        var sum = TinhTienNuoc(n) + TinhTienGio(checkin, checkout);
         sum = checkin >= _gio_discount_start && checkin <= _gio_discount_end ? sum - sum * _discount_percent / 100 : sum;
         // output
         PrintlnAdv(YELLOW, format("Tổng chi phí khách hàng phải trả là: %,.0f đồng.\n", ceil(sum)));
@@ -67,8 +67,8 @@ public class BaiTapTongHop {
         return n;
     }
 
-    // Chi phí nước uống của nhóm khách hàng
-    private static int ChiPhiNuoc(int n) {
+    // Tính tiền nước uống của nhóm khách hàng
+    private static int TinhTienNuoc(int n) {
         return n * _gia_nuoc;
     }
 
