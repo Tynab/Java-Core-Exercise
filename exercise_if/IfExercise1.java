@@ -1,4 +1,4 @@
-package if_exercise;
+package exercise_if;
 
 import static java.lang.Integer.*;
 import static java.lang.String.*;
@@ -20,7 +20,7 @@ public class IfExercise1 {
         // var
         var nMax = 3;
         var ns = new int[nMax];
-        // cap
+        // input
         out.println();
         for (var i = 0; i < nMax; i++) {
             PrintAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);

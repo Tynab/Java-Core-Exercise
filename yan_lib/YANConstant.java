@@ -2,7 +2,7 @@ package yan_lib;
 
 public class YANConstant {
     // Constant
-    public static final int width = 55;
+    public static final int WIDTH = 70;
 
     // Reset
     public static final String RESET = "\033[0m"; // Text Reset

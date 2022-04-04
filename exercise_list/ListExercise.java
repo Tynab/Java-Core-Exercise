@@ -1,4 +1,4 @@
-package list_exercise;
+package exercise_list;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,20 +18,20 @@ public class ListExercise {
     }
 
     // Fields
-    private static Scanner scan = new Scanner(in);
+    private static Scanner _scan = new Scanner(in);
 
     // Main
     private static void Main() {
         // var
         ArrayList<String> list = new ArrayList<>();
         var nMax = 2;
-        // cap
+        // input
         out.println();
         for (var i = 0; i < nMax; i++) {
             PrintAdv(GREEN, format("Nhập chuỗi thứ %d: ", i + 1), RESET);
-            list.add(scan.next());
+            list.add(_scan.next());
         }
-        // selection
+        // cap
         PrintlnAdv(BLUE, "Phân biệt chữ hoa chữ thường?");
         PrintlnAdv("1. Có   ");
         PrintlnAdv("2. Không");

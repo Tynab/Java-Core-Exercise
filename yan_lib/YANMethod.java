@@ -10,7 +10,7 @@ import static yan_lib.YANConstant.*;
 
 public class YANMethod {
     // Fields
-    private static Scanner scan = new Scanner(in);
+    private static Scanner _scan = new Scanner(in);
 
     // Try parse int
     public static boolean TryParse(String str, int n) {
@@ -36,8 +36,10 @@ public class YANMethod {
 
     // Scan int
     public static int ScanInt() {
+        // var
         var n = 0;
-        var s = scan.next();
+        var s = _scan.next();
+        // check
         if (TryParse(s, n)) {
             n = parseInt(s);
         } else {
@@ -49,8 +51,10 @@ public class YANMethod {
 
     // Scan float
     public static float ScanFloat() {
+        // var
         var n = 0f;
-        var s = scan.next();
+        var s = _scan.next();
+        // check
         if (TryParse(s, n)) {
             n = parseFloat(s);
         } else {
@@ -106,7 +110,7 @@ public class YANMethod {
 
     // Print advanced
     public static void PrintAdv(String s) {
-        for (var i = 1; i <= (width - s.length()) / 2; i++) {
+        for (var i = 1; i <= (WIDTH - s.length()) / 2; i++) {
             out.print(" ");
         }
         out.print(s);
@@ -114,7 +118,7 @@ public class YANMethod {
 
     // Print advanced color
     public static void PrintAdv(String cl, String s) {
-        for (var i = 1; i <= (width - s.length()) / 2; i++) {
+        for (var i = 1; i <= (WIDTH - s.length()) / 2; i++) {
             out.print(" ");
         }
         out.print(cl + s);
@@ -122,7 +126,7 @@ public class YANMethod {
 
     // Print advanced multi color
     public static void PrintAdv(String cl, String s, String cl_follow) {
-        for (var i = 1; i <= (width - s.length()) / 2; i++) {
+        for (var i = 1; i <= (WIDTH - s.length()) / 2; i++) {
             out.print(" ");
         }
         out.print(cl + s + cl_follow);
@@ -130,7 +134,7 @@ public class YANMethod {
 
     // Print line advanced
     public static void PrintlnAdv(String s) {
-        for (var i = 1; i <= (width - s.length()) / 2; i++) {
+        for (var i = 1; i <= (WIDTH - s.length()) / 2; i++) {
             out.print(" ");
         }
         out.println(s);
@@ -138,7 +142,7 @@ public class YANMethod {
 
     // Print line advanced color
     public static void PrintlnAdv(String cl, String s) {
-        for (var i = 1; i <= (width - s.length()) / 2; i++) {
+        for (var i = 1; i <= (WIDTH - s.length()) / 2; i++) {
             out.print(" ");
         }
         out.println(cl + s);
@@ -146,7 +150,7 @@ public class YANMethod {
 
     // Print line advanced multi color
     public static void PrintlnAdv(String cl, String s, String cl_follow) {
-        for (var i = 1; i <= (width - s.length()) / 2; i++) {
+        for (var i = 1; i <= (WIDTH - s.length()) / 2; i++) {
             out.print(" ");
         }
         out.println(cl + s + cl_follow);

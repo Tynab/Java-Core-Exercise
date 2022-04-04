@@ -1,4 +1,4 @@
-package array_exercise;
+package exercise_array;
 
 import static java.lang.Integer.*;
 import static java.lang.String.*;
@@ -20,7 +20,7 @@ public class ArrayExercise {
         // var
         var nMax = 10;
         var ns = new int[nMax];
-        // cap
+        // input
         out.println();
         for (var i = 0; i < nMax; i++) {
             PrintAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);

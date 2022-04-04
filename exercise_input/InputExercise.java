@@ -1,4 +1,4 @@
-package input_exercise;
+package exercise_input;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -25,11 +25,21 @@ public class InputExercise {
         PrintAdv(GREEN, "Nhập vào múi giờ: ", RESET);
         // format
         var timeFormat = new SimpleDateFormat("HH:mm:ss");
-        timeFormat.setTimeZone(getTimeZone(NumToUTC(NumLimit(-11, 12))));
+        timeFormat.setTimeZone(getTimeZone(NumToUTC(TimezoneLimit(-11, 12))));
         // output
         PrintlnAdv(YELLOW, format("Hiện giờ là: %s\n", timeFormat.format(new Date())));
         // ctrl
         CheckOut();
+    }
+
+    // Timezone limit
+    private static float TimezoneLimit(float min, float max) {
+        var n = ScanFloat();
+        if (n < min || n > max) {
+            PrintAdv(RED, "Múi giờ từ GMT-11 đến GMT+12, xin nhập lại: ", RESET);
+            n = TimezoneLimit(min, max);
+        }
+        return n;
     }
 
     // Check out
