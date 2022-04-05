@@ -1,0 +1,84 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch BaiTapJava1",
+            "request": "launch",
+            "mainClass": "bai_tap_nop.BaiTapJava1",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch BaiTapJava2",
+            "request": "launch",
+            "mainClass": "bai_tap_nop.BaiTapJava2",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch BaiTapTongHop",
+            "request": "launch",
+            "mainClass": "bai_tap_nop.BaiTapTongHop",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayExercise",
+            "request": "launch",
+            "mainClass": "exercise_array.ArrayExercise",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch IfExercise1",
+            "request": "launch",
+            "mainClass": "exercise_if.IfExercise1",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch IfExercise2",
+            "request": "launch",
+            "mainClass": "exercise_if.IfExercise2",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch InputExercise",
+            "request": "launch",
+            "mainClass": "exercise_input.InputExercise",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch ListExercise",
+            "request": "launch",
+            "mainClass": "exercise_list.ListExercise",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch LoopExercise",
+            "request": "launch",
+            "mainClass": "exercise_loop.LoopExercise",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        },
+        {
+            "type": "java",
+            "name": "Launch OutputExercise",
+            "request": "launch",
+            "mainClass": "exercise_output.OutputExercise",
+            "projectName": "Java Core Exercise_1cf09d2b"
+        }
+    ]
+}

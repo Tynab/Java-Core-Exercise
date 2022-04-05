@@ -1,6 +1,7 @@
 package bai_tap_nop;
 
 import static java.lang.Integer.*;
+import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
 import static yan_lib.YANConstant.*;
@@ -37,13 +38,26 @@ public class BaiTapJava2 {
         CheckOut();
     }
 
+    // Scan binary
+    private static String ScanBin() {
+        var s = _scan.next();
+        for (var i = 0; i < s.length(); i++) {
+            var c = s.charAt(i);
+            if (c != '1' && c != '0') {
+                PrintAdv(RED, "Dữ liệu nhập vào không phải số nhị phân, xin nhập lại: ", RESET);
+                s = ScanBin();
+                break;
+            }
+        }
+        return s;
+    }
+
     // Decimal to binary
     private static void DecToBin() {
         // input
         PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
-        var n = NumLimit(1, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s\n", BinConvertor(n)));
+        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s\n", BinConvertor(NumLimit(1, MAX_VALUE))));
     }
 
     // Binary convertor
@@ -60,19 +74,17 @@ public class BaiTapJava2 {
     private static void BinToDec() {
         // input
         PrintAdv(GREEN, "Nhập vào số nhị phân: ", RESET);
-        var s = _scan.next();
         // output
-        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s\n", DecConvertor(s)));
+        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s\n", DecConvertor(ScanBin())));
     }
 
     // Decimal convertor
     private static int DecConvertor(String s) {
         var sum = 0;
         for (var i = 0; i < s.length(); i++) {
-            var n = 0;
-            if (TryParse(String.valueOf(s.charAt(i)), n)) {
-                PrintlnAdv(String.valueOf(n));
-                sum += n * 2 ^ (s.length() - 1 - i);
+            var c = s.charAt(i);
+            if (TryParseInt(c)) {
+                sum += ParseIntAdv(c) * pow(2, (s.length() - 1 - i));
             }
         }
         return sum;

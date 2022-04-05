@@ -15,14 +15,16 @@ public class IfExercise1 {
         Main();
     }
 
+    // Fields
+    private static final int _nMax = 3;
+
     // Main
     private static void Main() {
         // var
-        var nMax = 3;
-        var ns = new int[nMax];
+        var ns = new int[_nMax];
         // input
         out.println();
-        for (var i = 0; i < nMax; i++) {
+        for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);
             ns[i] = NumLimit(0, MAX_VALUE);
         }
@@ -30,6 +32,30 @@ public class IfExercise1 {
         PrintlnAdv(YELLOW, format("Kết luận: %s.\n", CheckOrder(ns)));
         // ctrl
         CheckOut();
+    }
+
+    // Check ascending
+    private static boolean IsAscending(int... args) {
+        var is_success = true;
+        for (var i = 0; i < args.length - 1; i++) {
+            if (args[i] > args[i + 1]) {
+                is_success = false;
+                break;
+            }
+        }
+        return is_success;
+    }
+
+    // Check descending
+    private static boolean IsDescending(int... args) {
+        var is_success = true;
+        for (var i = 0; i < args.length - 1; i++) {
+            if (args[i] < args[i + 1]) {
+                is_success = false;
+                break;
+            }
+        }
+        return is_success;
     }
 
     // Check order

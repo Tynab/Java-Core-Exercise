@@ -15,14 +15,16 @@ public class ArrayExercise {
         Main();
     }
 
+    // Fields
+    private static final int _nMax = 10;
+
     // Main
     private static void Main() {
         // var
-        var nMax = 10;
-        var ns = new int[nMax];
+        var ns = new int[_nMax];
         // input
         out.println();
-        for (var i = 0; i < nMax; i++) {
+        for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);
             ns[i] = NumLimit(0, MAX_VALUE);
         }
