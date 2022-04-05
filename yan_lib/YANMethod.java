@@ -71,10 +71,8 @@ public class YANMethod {
 
     // Scan int
     public static int ScanInt() {
-        // var
         var n = 0;
-        var s = _scan.next();
-        // check
+        var s = _scan.nextLine();
         if (TryParseFloat(s)) {
             n = parseInt(s);
         } else {
@@ -86,10 +84,8 @@ public class YANMethod {
 
     // Scan float
     public static float ScanFloat() {
-        // var
         var n = 0f;
-        var s = _scan.next();
-        // check
+        var s = _scan.nextLine();
         if (TryParseFloat(s)) {
             n = parseFloat(s);
         } else {
@@ -191,10 +187,8 @@ public class YANMethod {
 
     // Covert to title case
     public static String ToTitleCase(String s) {
-        // var
         List<Character> list = new ArrayList<>();
         var str = "";
-        // convert
         if (!IsNullOrWhitespace(s)) {
             var cst = s.charAt(0);
             cst = isWhitespace(cst) ? cst : toUpperCase(cst);

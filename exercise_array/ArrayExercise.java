@@ -37,10 +37,9 @@ public class ArrayExercise {
 
     // Check mirror
     private static void CheckMirror(int... args) {
-        // var
+        // pick
         var is_success = false;
         var max = args.length;
-        // pick
         for (var i = 0; i < max / 2; i++) {
             if (args[i] == args[max - 1 - i]) {
                 is_success = true;

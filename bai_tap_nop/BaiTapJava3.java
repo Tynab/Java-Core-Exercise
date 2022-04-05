@@ -32,7 +32,6 @@ public class BaiTapJava3 {
             "java.specification.vendor",
             "java.specification.name",
             "java.class.version",
-            "java.class.path",
             "java.io.tmpdir",
             "java.compiler",
             "os.name",

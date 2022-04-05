@@ -29,7 +29,7 @@ public class ListExercise {
         out.println();
         for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Nhập chuỗi thứ %d: ", i + 1), RESET);
-            list.add(_scan.next());
+            list.add(_scan.nextLine());
         }
         // cap
         PrintlnAdv(CYAN, "Phân biệt chữ hoa chữ thường?");
@@ -46,10 +46,9 @@ public class ListExercise {
 
     // Check content without case
     private static String CheckContent(ArrayList<String> list) {
-        // var
+        // def
         var max = list.size();
         var strFrm = ToLowerCaseAdv(list.get(0));
-        // def
         var s = format("%d chuỗi giống nhau.", max);
         // check miss
         for (var i = 1; i < max; i++) {
@@ -63,10 +62,9 @@ public class ListExercise {
 
     // Check case
     private static String CheckCase(ArrayList<String> list) {
-        // var
+        // def
         var max = list.size();
         var strFrm = list.get(0);
-        // def
         var s = format("%d chuỗi giống nhau.", max);
         // check miss
         for (var i = 1; i < max; i++) {

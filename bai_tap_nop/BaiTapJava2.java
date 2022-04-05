@@ -40,7 +40,7 @@ public class BaiTapJava2 {
 
     // Scan binary
     private static String ScanBin() {
-        var s = _scan.next();
+        var s = _scan.nextLine();
         for (var i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
             if (c != '1' && c != '0') {
