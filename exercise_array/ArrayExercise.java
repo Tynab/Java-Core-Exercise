@@ -10,7 +10,7 @@ public class ArrayExercise {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "Array Exersice");
+        PrintlnAdv(BLUE_BOLD, "Array Exersice");
         // content
         Main();
     }

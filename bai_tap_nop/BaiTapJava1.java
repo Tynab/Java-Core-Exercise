@@ -8,7 +8,7 @@ public class BaiTapJava1 {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "Bài Tập Java 1");
+        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 1");
         // content
         Main();
     }

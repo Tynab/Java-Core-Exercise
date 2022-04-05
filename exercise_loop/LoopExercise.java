@@ -10,7 +10,7 @@ public class LoopExercise {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "Loop Exersice");
+        PrintlnAdv(BLUE_BOLD, "Loop Exersice");
         // content
         Main();
     }

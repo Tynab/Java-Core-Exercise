@@ -10,7 +10,7 @@ public class IfExercise1 {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "If Exersice 1");
+        PrintlnAdv(BLUE_BOLD, "If Exersice 1");
         // content
         Main();
     }

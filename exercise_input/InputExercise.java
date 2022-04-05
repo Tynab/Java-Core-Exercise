@@ -13,7 +13,7 @@ public class InputExercise {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "Input Exersice");
+        PrintlnAdv(BLUE_BOLD, "Input Exersice");
         // content
         Main();
     }
@@ -40,6 +40,13 @@ public class InputExercise {
             n = TimezoneLimit(min, max);
         }
         return n;
+    }
+
+    // Convert number to UTC
+    private static String NumToUTC(float n) {
+        var hour = (int) n;
+        var minute = (int) ((n - hour) * 60);
+        return format("%s%d:%02d", n < 0 ? "GMT-" : "GMT+", hour, minute);
     }
 
     // Check out

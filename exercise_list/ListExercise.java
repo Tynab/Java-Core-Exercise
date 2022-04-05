@@ -12,13 +12,13 @@ public class ListExercise {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "Input Exersice");
+        PrintlnAdv(BLUE_BOLD, "Input Exersice");
         // content
         Main();
     }
 
     // Fields
-    private static Scanner _scan = new Scanner(in);
+    private static final Scanner _scan = new Scanner(in);
 
     // Main
     private static void Main() {
@@ -32,7 +32,7 @@ public class ListExercise {
             list.add(_scan.next());
         }
         // cap
-        PrintlnAdv(BLUE, "Phân biệt chữ hoa chữ thường?");
+        PrintlnAdv(CYAN, "Phân biệt chữ hoa chữ thường?");
         PrintlnAdv("1. Có   ");
         PrintlnAdv("2. Không");
         PrintAdv("Chọn 1 trong các phương án trên: ");

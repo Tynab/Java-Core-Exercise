@@ -8,7 +8,7 @@ public class OutputExercise {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "Output Exersice");
+        PrintlnAdv(BLUE_BOLD, "Output Exersice");
         // content
         Main();
     }

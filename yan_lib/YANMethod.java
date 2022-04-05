@@ -5,12 +5,11 @@ import java.util.Scanner;
 import static java.lang.Float.*;
 import static java.lang.Integer.*;
 import static java.lang.System.*;
-import static java.lang.String.*;
 import static yan_lib.YANConstant.*;
 
 public class YANMethod {
     // Fields
-    private static Scanner _scan = new Scanner(in);
+    private static final Scanner _scan = new Scanner(in);
 
     // Try parse int
     public static boolean TryParse(String str, int n) {
@@ -164,12 +163,5 @@ public class YANMethod {
         PrintAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
         return NumLimit(1, 2);
-    }
-
-    // Convert number to UTC
-    public static String NumToUTC(float n) {
-        var hour = (int) n;
-        var minute = (int) ((n - hour) * 60);
-        return format("%s%d:%02d", n < 0 ? "GMT-" : "GMT+", hour, minute);
     }
 }

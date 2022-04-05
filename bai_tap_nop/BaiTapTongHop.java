@@ -11,7 +11,7 @@ public class BaiTapTongHop {
     public static void main(String[] args) {
         // tit
         out.println();
-        PrintlnAdv(CYAN_BOLD, "Tính Tiền Karaoke");
+        PrintlnAdv(BLUE_BOLD, "Tính Tiền Karaoke");
         // content
         Main();
     }
