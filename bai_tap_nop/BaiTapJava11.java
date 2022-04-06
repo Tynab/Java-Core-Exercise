@@ -20,7 +20,7 @@ public class BaiTapJava11 {
     private static void Main() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào số tự nhiên N*: ", RESET);
+        PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
         var n = NumLimit(1, MAX_VALUE);
         // output
         PrintlnAdv(YELLOW, format("Số lớn nhất nhỏ hơn log2(%d) là: %d\n", n, MaxLimLog2(n)));

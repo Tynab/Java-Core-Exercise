@@ -28,7 +28,7 @@ public class BaiTapJava13 {
         List<Integer> list = new ArrayList<>();
         for (var i = 0; i < n; i++) {
             PrintAdv(GREEN, format("Nhập phần tử thứ %d: ", i + 1), RESET);
-            list.add(NumLimit(MIN_VALUE, MAX_VALUE));
+            list.add(ScanInt());
         }
         // cap
         PrintlnAdv(CYAN, "1. Tính giá trị trung bình             ");
@@ -36,8 +36,8 @@ public class BaiTapJava13 {
         PrintlnAdv("3. Tìm phần tử âm lớn nhất, nhỏ nhất   ");
         PrintlnAdv("4. Tìm phần tử dương lớn nhất, nhỏ nhất");
         PrintlnAdv("5. In ra các phần tử chẵn, lẻ          ");
-        PrintlnAdv("6. Thêm một phần tử theo index         ");
-        PrintlnAdv("7. Xóa một phần tử theo index          ");
+        PrintlnAdv("6. Thêm một phần tử theo vị trí        ");
+        PrintlnAdv("7. Xóa một phần tử theo vị trí         ");
         PrintAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
         // output
@@ -60,6 +60,14 @@ public class BaiTapJava13 {
             }
             case 5: {
                 UnitE(list);
+                break;
+            }
+            case 6: {
+                UnitF(list);
+                break;
+            }
+            case 7: {
+                UnitG(list);
                 break;
             }
         }
@@ -179,6 +187,40 @@ public class BaiTapJava13 {
         } else {
             PrintlnAdv("Mảng không có phần tử lẻ.\n");
         }
+    }
+
+    // Unit 6
+    private static void UnitF(List<Integer> list) {
+        // input
+        PrintAdv(GREEN, "Nhập số muốn thêm vào mảng: ", RESET);
+        var x = ScanInt();
+        PrintAdv(GREEN, "Nhập vị trí phần tử mới cần chèn trong mảng: ", RESET);
+        var max = list.size();
+        var path = NumLimit(1, max + 1);
+        // process
+        list.add(path - 1, x);
+        // output
+        var s = String.valueOf(list.get(0));
+        for (var i = 1; i <= max; i++) {
+            s += format(", %d", list.get(i));
+        }
+        PrintlnAdv(YELLOW, format("Mảng mới là: %s\n", s));
+    }
+
+    // Unit 6
+    private static void UnitG(List<Integer> list) {
+        // input
+        PrintAdv(GREEN, "Nhập vị trí phần tử cần xóa trong mảng: ", RESET);
+        var max = list.size();
+        var path = NumLimit(1, max);
+        // add
+        list.remove(path - 1);
+        // output
+        var s = String.valueOf(list.get(0));
+        for (var i = 1; i < max - 1; i++) {
+            s += format(", %d", list.get(i));
+        }
+        PrintlnAdv(YELLOW, format("Mảng mới là: %s\n", s));
     }
 
     // Check out

@@ -1,6 +1,5 @@
 package bai_tap_nop;
 
-import static java.lang.Integer.*;
 import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
@@ -22,14 +21,14 @@ public class BaiTapJava5 {
         out.println();
         PrintAdv(CYAN, "Nhập tọa độ điểm A\n");
         PrintAdv(GREEN, "xA = ", RESET);
-        var xA = NumLimit(MIN_VALUE, MAX_VALUE);
+        var xA = ScanInt();
         PrintAdv(GREEN, "yA = ", RESET);
-        var yA = NumLimit(MIN_VALUE, MAX_VALUE);
+        var yA = ScanInt();
         PrintAdv(CYAN, "Nhập tọa độ điểm B\n");
         PrintAdv(GREEN, "xB = ", RESET);
-        var xB = NumLimit(MIN_VALUE, MAX_VALUE);
+        var xB = ScanInt();
         PrintAdv(GREEN, "yB = ", RESET);
-        var yB = NumLimit(MIN_VALUE, MAX_VALUE);
+        var yB = ScanInt();
         // output
         var d = Length(xA, yA, xB, yB);
         if (d == (int) d) {

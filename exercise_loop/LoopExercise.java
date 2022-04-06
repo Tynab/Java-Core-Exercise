@@ -19,7 +19,7 @@ public class LoopExercise {
     private static void Main() {
         // cap
         out.println();
-        PrintAdv(GREEN, "Nhập vào số tự nhiên N*: ", RESET);
+        PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
         // output
         PrintlnAdv(YELLOW, format("Kết quả biểu thức là: %f\n", Calculator(NumLimit(1, MAX_VALUE))));
         // ctrl
