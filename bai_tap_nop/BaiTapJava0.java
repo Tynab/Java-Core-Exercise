@@ -6,7 +6,7 @@ import static java.lang.System.*;
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 
-public class BaiTapJava10 {
+public class BaiTapJava0 {
     public static void main(String[] args) {
         // tit
         out.println();
