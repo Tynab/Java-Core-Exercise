@@ -23,9 +23,8 @@ public class ListExercise {
 
     // Main
     private static void Main() {
-        // var
-        ArrayList<String> list = new ArrayList<>();
         // input
+        ArrayList<String> list = new ArrayList<>();
         out.println();
         for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Nhập chuỗi thứ %d: ", i + 1), RESET);

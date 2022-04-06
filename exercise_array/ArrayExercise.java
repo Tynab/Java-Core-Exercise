@@ -20,9 +20,8 @@ public class ArrayExercise {
 
     // Main
     private static void Main() {
-        // var
-        var ns = new int[_nMax];
         // input
+        var ns = new int[_nMax];
         out.println();
         for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);

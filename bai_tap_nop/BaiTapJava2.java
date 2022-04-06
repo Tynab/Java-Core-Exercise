@@ -1,13 +1,13 @@
 package bai_tap_nop;
 
+import java.util.Scanner;
+
 import static java.lang.Integer.*;
 import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
-
-import java.util.Scanner;
 
 public class BaiTapJava2 {
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class BaiTapJava2 {
     private static void Main() {
         // selection
         out.println();
-        PrintlnAdv(CYAN, "1. Đổi từ cơ số 10 sang nhị phân");
+        PrintlnAdv(CYAN, "1. Đổi từ cơ số 10 sang nhị phân ");
         PrintlnAdv("2. Đổi từ nhị phân sang cơ sô 10");
         PrintAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
