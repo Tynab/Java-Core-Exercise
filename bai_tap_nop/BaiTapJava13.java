@@ -1,7 +1,6 @@
 package bai_tap_nop;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static java.lang.Integer.*;
@@ -42,7 +41,7 @@ public class BaiTapJava13 {
         PrintAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
         // output
-        switch (NumLimit(1, 9)) {
+        switch (NumLimit(1, 7)) {
             case 1: {
                 UnitA(list);
                 break;
@@ -55,6 +54,14 @@ public class BaiTapJava13 {
                 UnitC(list);
                 break;
             }
+            case 4: {
+                UnitD(list);
+                break;
+            }
+            case 5: {
+                UnitE(list);
+                break;
+            }
         }
         // ctrl
         CheckOut();
@@ -62,10 +69,12 @@ public class BaiTapJava13 {
 
     // Unit 1
     private static void UnitA(List<Integer> list) {
+        // sum
         var sum = 0;
         for (var item : list) {
             sum += item;
         }
+        // average
         var av = (float) sum / list.size();
         if (av == (int) av) {
             PrintlnAdv(YELLOW, format("Giá trị trung bình của mảng là: %d\n", (int) av));
@@ -76,12 +85,13 @@ public class BaiTapJava13 {
 
     // Unit 2
     private static void UnitB(List<Integer> list) {
-        PrintlnAdv(YELLOW, format("Phần tử lớn nhất là: %d", max(list)));
-        PrintlnAdv(format("Phần tử nhỏ nhất là: %d\n", min(list)));
+        PrintlnAdv(YELLOW, format("Phần tử lớn nhất trong mảng là: %d", max(list)));
+        PrintlnAdv(format("Phần tử nhỏ nhất trong mảng là: %d\n", min(list)));
     }
 
     // Unit 3
     private static void UnitC(List<Integer> list) {
+        // scan
         var is_max_has = false;
         var is_min_has = false;
         var max = MIN_VALUE;
@@ -98,11 +108,76 @@ public class BaiTapJava13 {
                 }
             }
         }
+        // check back
         if (is_max_has || is_min_has) {
-            PrintlnAdv(YELLOW, format("Phần tử âm lớn nhất là: %d", max));
-            PrintlnAdv(format("Phần tử âm nhỏ nhất là: %d\n", min));
+            PrintlnAdv(YELLOW, format("Phần tử âm lớn nhất trong mảng là: %d", max));
+            PrintlnAdv(format("Phần tử âm nhỏ nhất trong mảng là: %d\n", min));
         } else {
             PrintlnAdv(YELLOW, "Mảng không có phần tử âm.\n");
+        }
+    }
+
+    // Unit 4
+    private static void UnitD(List<Integer> list) {
+        // scan
+        var is_max_has = false;
+        var is_min_has = false;
+        var max = MIN_VALUE;
+        var min = MAX_VALUE;
+        for (var item : list) {
+            if (item > 0) {
+                if (item > max) {
+                    is_max_has = true;
+                    max = item;
+                }
+                if (item < min) {
+                    is_min_has = true;
+                    min = item;
+                }
+            }
+        }
+        // check back
+        if (is_max_has || is_min_has) {
+            PrintlnAdv(YELLOW, format("Phần tử dương lớn nhất trong mảng là: %d", max));
+            PrintlnAdv(format("Phần tử dương nhỏ nhất trong mảng là: %d\n", min));
+        } else {
+            PrintlnAdv(YELLOW, "Mảng không có phần tử dương.\n");
+        }
+    }
+
+    // Unit 5
+    private static void UnitE(List<Integer> list) {
+        // split
+        List<Integer> listE = new ArrayList<>();
+        List<Integer> listO = new ArrayList<>();
+        for (var item : list) {
+            if (item % 2 == 0) {
+                listE.add(item);
+            } else {
+                listO.add(item);
+            }
+        }
+        // even
+        var maxE = listE.size();
+        if (maxE > 0) {
+            var sE = String.valueOf(listE.get(0));
+            for (var i = 1; i < maxE; i++) {
+                sE += format(", %d", listE.get(i));
+            }
+            PrintlnAdv(YELLOW, format("Các phần tử chẵn trong mảng là: %s", sE));
+        } else {
+            PrintlnAdv(YELLOW, "Mảng không có phần tử chẵn.");
+        }
+        // odd
+        var maxO = listO.size();
+        if (maxO > 0) {
+            var sO = String.valueOf(listO.get(0));
+            for (var i = 1; i < maxO; i++) {
+                sO += format(", %d", listO.get(i));
+            }
+            PrintlnAdv(format("Các phần tử lẻ trong mảng là: %s\n", sO));
+        } else {
+            PrintlnAdv("Mảng không có phần tử lẻ.\n");
         }
     }
 
