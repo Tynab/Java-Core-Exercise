@@ -9,7 +9,6 @@ import java.util.Random;
 
 public class BaiTapJava17 {
     public static void main(String[] args) {
-        // tit
         out.println();
         PrintlnAdv(BLUE_BOLD, "Bài Tập Java 17");
         // content
