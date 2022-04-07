@@ -18,6 +18,10 @@ public class InputExercise {
         Main();
     }
 
+    // Fields
+    private static final float _min_timezone = -11;
+    private static final float _max_timezone = 12;
+
     // Main
     private static void Main() {
         // cap
@@ -25,7 +29,7 @@ public class InputExercise {
         PrintAdv(GREEN, "Nhập vào múi giờ: ", RESET);
         // format
         var timeFormat = new SimpleDateFormat("HH:mm:ss");
-        timeFormat.setTimeZone(getTimeZone(NumToUTC(TimezoneLimit(-11, 12))));
+        timeFormat.setTimeZone(getTimeZone(NumToUTC(TimezoneLimit(_min_timezone, _max_timezone))));
         // output
         PrintlnAdv(YELLOW, format("Hiện giờ là: %s\n", timeFormat.format(new Date())));
         // ctrl
@@ -36,7 +40,13 @@ public class InputExercise {
     private static float TimezoneLimit(float min, float max) {
         var n = ScanFloat();
         if (n < min || n > max) {
-            PrintAdv(RED, "Múi giờ từ GMT-11 đến GMT+12, xin nhập lại: ", RESET);
+            var iMin = valueOf((int) min);
+            var sMin = valueOf(min);
+            var strMin = min == (int) min ? min > 0 ? "+" + iMin : iMin : min > 0 ? "+" + sMin : sMin;
+            var iMax = valueOf((int) max);
+            var sMax = valueOf(max);
+            var strMax = max == (int) max ? max > 0 ? "+" + iMax : iMax : max > 0 ? "+" + sMax : sMax;
+            PrintAdv(RED, format("Múi giờ từ GMT%s đến GMT%s, xin nhập lại: ", strMin, strMax), RESET);
             n = TimezoneLimit(min, max);
         }
         return n;

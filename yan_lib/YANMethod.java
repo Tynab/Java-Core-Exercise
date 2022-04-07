@@ -105,10 +105,30 @@ public class YANMethod {
         return n;
     }
 
+    // Number limit int
+    public static int NumLimitEx(int min, int max) {
+        var n = ScanInt();
+        if (n <= min || n >= max) {
+            PrintAdv(RED, "Không xác định, xin nhập lại: ", RESET);
+            n = NumLimit(min, max);
+        }
+        return n;
+    }
+
     // Number limit float
     public static float NumLimit(float min, float max) {
         var n = ScanFloat();
         if (n < min || n > max) {
+            PrintAdv(RED, "Không xác định, xin nhập lại: ", RESET);
+            n = NumLimit(min, max);
+        }
+        return n;
+    }
+
+    // Number limit float
+    public static float NumLimitEx(float min, float max) {
+        var n = ScanFloat();
+        if (n <= min || n >= max) {
             PrintAdv(RED, "Không xác định, xin nhập lại: ", RESET);
             n = NumLimit(min, max);
         }
