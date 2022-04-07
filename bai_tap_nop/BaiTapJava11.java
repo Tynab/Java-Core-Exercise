@@ -10,8 +10,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava11 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 11");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 11");
         // content
         Main();
     }
@@ -23,7 +23,8 @@ public class BaiTapJava11 {
         PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
         var n = NumLimit(1, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Số lớn nhất nhỏ hơn log2(%d) là: %d\n", n, MaxLimLog2(n)));
+        PrintlnAdv(YELLOW, format("Số lớn nhất nhỏ hơn log2(%d) là: %d", n, MaxLimLog2(n)));
+        out.println();
         // ctrl
         CheckOut();
     }

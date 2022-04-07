@@ -12,8 +12,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava15 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 15");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 15");
         // content
         Main();
     }
@@ -28,7 +28,8 @@ public class BaiTapJava15 {
         PrintAdv(GREEN, "Nhập vào chuỗi: ", RESET);
         var s = _scan.nextLine();
         // cap
-        PrintlnAdv(CYAN, "1. In ra độ dài chuỗi                  ");
+        out.print(CYAN);
+        PrintlnAdv("1. In ra độ dài chuỗi                  ");
         PrintlnAdv("2. In ra ký tự tại một vị trí nhất định");
         PrintlnAdv("3. Kiểm tra chuỗi phụ trong chuỗi      ");
         PrintAdv("Chọn 1 trong các phương án trên: ");
@@ -48,6 +49,7 @@ public class BaiTapJava15 {
                 break;
             }
         }
+        out.println();
         // ctrl
         CheckOut();
     }
@@ -65,7 +67,7 @@ public class BaiTapJava15 {
 
     // Unit 1
     private static void UnitA(String s) {
-        PrintlnAdv(YELLOW, format("Độ dài chuỗi là: %d\n", s.length()));
+        PrintlnAdv(YELLOW, format("Độ dài chuỗi là: %d", s.length()));
     }
 
     // Unit 2
@@ -74,27 +76,27 @@ public class BaiTapJava15 {
         PrintAdv(GREEN, "Nhập vị trí ký tự cần tìm trong chuỗi: ", RESET);
         var path = NumLimit(1, s.length());
         // out put
-        PrintlnAdv(YELLOW, format("Ký tự ở vị trí thứ %d trong chuỗi là: %c\n", path, s.charAt(path - 1)));
+        PrintlnAdv(YELLOW, format("Ký tự ở vị trí thứ %d trong chuỗi là: %c", path, s.charAt(path - 1)));
     }
 
     // Unit 3
     private static void UnitC(String s) {
         // input
         PrintAdv(GREEN, "Nhập chuỗi cần tìm: ", RESET);
-        var str = _scan.nextLine();
         // process
         List<Integer> list = new ArrayList<>();
-        GetAllIndexOf(list, s, str, 0);
+        GetAllIndexOf(list, s, _scan.nextLine(), 0);
         // out put
+        out.print(YELLOW);
         var max = list.size();
         if (max > 0) {
             var txt = String.valueOf(list.get(0) + 1);
             for (var i = 1; i < max; i++) {
                 txt += format(", %d", list.get(i) + 1);
             }
-            PrintlnAdv(YELLOW, format("Chuỗi cần tìm ở vị trí thứ %s.\n", txt));
+            PrintlnAdv(format("Chuỗi cần tìm ở vị trí thứ %s.", txt));
         } else {
-            PrintlnAdv(YELLOW, "Không tìm thấy chuỗi cần tìm.\n");
+            PrintlnAdv("Không tìm thấy chuỗi cần tìm.");
         }
     }
 

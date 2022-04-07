@@ -10,8 +10,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava8 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 8");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 8");
         // content
         Main();
     }
@@ -25,7 +25,8 @@ public class BaiTapJava8 {
         out.println();
         PrintAdv(GREEN, "Nhập vào chuỗi: ", RESET);
         // output
-        PrintlnAdv(YELLOW, format("Chuỗi kết quả in hoa ký tự đầu là: %s\n", ToTitleCaseAdv(_scan.nextLine())));
+        PrintlnAdv(YELLOW, format("Chuỗi in hoa mỗi ký tự đầu là: %s", ToTitleCaseAdv(_scan.nextLine())));
+        out.println();
         // ctrl
         CheckOut();
     }

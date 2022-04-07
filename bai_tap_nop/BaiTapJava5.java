@@ -9,8 +9,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava5 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 5");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 5");
         // content
         Main();
     }
@@ -19,28 +19,26 @@ public class BaiTapJava5 {
     private static void Main() {
         // input
         out.println();
-        PrintAdv(CYAN, "Nhập tọa độ điểm A\n");
+        PrintAdv(CYAN, "Nhập tọa độ điểm A");
+        out.println();
         PrintAdv(GREEN, "xA = ", RESET);
         var xA = ScanInt();
         PrintAdv(GREEN, "yA = ", RESET);
         var yA = ScanInt();
-        PrintAdv(CYAN, "Nhập tọa độ điểm B\n");
+        PrintAdv(CYAN, "Nhập tọa độ điểm B");
+        out.println();
         PrintAdv(GREEN, "xB = ", RESET);
         var xB = ScanInt();
         PrintAdv(GREEN, "yB = ", RESET);
         var yB = ScanInt();
         // output
-        var d = Length(xA, yA, xB, yB);
-        if (d == (int) d) {
-            PrintlnAdv(YELLOW, format("Độ dài đoạn thằng AB là: %d\n", (int) d));
-        } else {
-            PrintlnAdv(YELLOW, format("Độ dài đoạn thằng AB là: %s\n", d));
-        }
+        PrintlnAdv(YELLOW, format("Độ dài đoạn thằng AB là: %s", WritePerfectDub(Length(xA, yA, xB, yB))));
+        out.println();
         // ctrl
         CheckOut();
     }
 
-    // Sum me
+    // Length AB
     private static double Length(int x1, int y1, int x2, int y2) {
         return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
     }

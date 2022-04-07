@@ -7,8 +7,8 @@ import static yan_lib.YANMethod.*;
 public class OutputExercise {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Output Exersice");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Output Exersice");
         // content
         Main();
     }
@@ -21,6 +21,6 @@ public class OutputExercise {
         PrintlnAdv("    J   A A   V   V   A A  ");
         PrintlnAdv("J   J  AAAAA   V V   AAAAA ");
         PrintlnAdv(" JJJ  A     A   V   A     A");
-        PrintAdv(RESET, "\n");
+        out.println(RESET);
     }
 }

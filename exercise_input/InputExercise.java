@@ -12,15 +12,15 @@ import static yan_lib.YANMethod.*;
 public class InputExercise {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Input Exersice");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Input Exersice");
         // content
         Main();
     }
 
     // Fields
-    private static final float _min_timezone = -11;
-    private static final float _max_timezone = 12;
+    private static final double _min_timezone = -11;
+    private static final double _max_timezone = 12;
 
     // Main
     private static void Main() {
@@ -31,29 +31,35 @@ public class InputExercise {
         var timeFormat = new SimpleDateFormat("HH:mm:ss");
         timeFormat.setTimeZone(getTimeZone(NumToUTC(TimezoneLimit(_min_timezone, _max_timezone))));
         // output
-        PrintlnAdv(YELLOW, format("Hiện giờ là: %s\n", timeFormat.format(new Date())));
+        PrintlnAdv(YELLOW, format("Hiện giờ là: %s", timeFormat.format(new Date())));
+        out.println();
         // ctrl
         CheckOut();
     }
 
     // Timezone limit
-    private static float TimezoneLimit(float min, float max) {
-        var n = ScanFloat();
+    private static double TimezoneLimit(double min, double max) {
+        var n = ScanDub();
         if (n < min || n > max) {
+            // min +-
             var iMin = valueOf((int) min);
             var sMin = valueOf(min);
-            var strMin = min == (int) min ? min > 0 ? "+" + iMin : iMin : min > 0 ? "+" + sMin : sMin;
+            // max +-
             var iMax = valueOf((int) max);
             var sMax = valueOf(max);
-            var strMax = max == (int) max ? max > 0 ? "+" + iMax : iMax : max > 0 ? "+" + sMax : sMax;
-            PrintAdv(RED, format("Múi giờ từ GMT%s đến GMT%s, xin nhập lại: ", strMin, strMax), RESET);
+            // main
+            PrintAdv(RED,
+                    format("Múi giờ từ GMT%s đến GMT%s, xin nhập lại: ",
+                            min == (int) min ? min > 0 ? "+" + iMin : iMin : min > 0 ? "+" + sMin : sMin,
+                            max == (int) max ? max > 0 ? "+" + iMax : iMax : max > 0 ? "+" + sMax : sMax),
+                    RESET);
             n = TimezoneLimit(min, max);
         }
         return n;
     }
 
     // Convert number to UTC
-    private static String NumToUTC(float n) {
+    private static String NumToUTC(double n) {
         var hour = (int) n;
         var minute = (int) ((n - hour) * 60);
         return format("%s%d:%02d", n < 0 ? "GMT-" : "GMT+", hour, minute);

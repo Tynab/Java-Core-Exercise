@@ -10,8 +10,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava6 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 6");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 6");
         // content
         Main();
     }
@@ -25,8 +25,8 @@ public class BaiTapJava6 {
         out.println();
         PrintAdv(GREEN, "Nhập vào chuỗi: ", RESET);
         // output
-        PrintlnAdv(YELLOW,
-                format("Chuỗi đảo ngược là: %s\n", new StringBuilder(_scan.nextLine()).reverse().toString()));
+        PrintlnAdv(YELLOW, format("Chuỗi đảo ngược là: %s", new StringBuilder(_scan.nextLine()).reverse().toString()));
+        out.println();
         // ctrl
         CheckOut();
     }

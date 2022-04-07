@@ -12,8 +12,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava7 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 7");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 7");
         // content
         Main();
     }
@@ -31,7 +31,8 @@ public class BaiTapJava7 {
             s += format(", %d", list.get(i));
         }
         // output
-        PrintlnAdv(YELLOW, format("%s\n", s));
+        PrintlnAdv(YELLOW, format("%s", s));
+        out.println();
         // ctrl
         CheckOut();
     }

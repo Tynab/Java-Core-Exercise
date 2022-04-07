@@ -9,8 +9,8 @@ import static yan_lib.YANMethod.*;
 public class ArrayExercise {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Array Exersice");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Array Exersice");
         // content
         Main();
     }
@@ -21,8 +21,8 @@ public class ArrayExercise {
     // Main
     private static void Main() {
         // input
-        var ns = new int[_nMax];
         out.println();
+        var ns = new int[_nMax];
         for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);
             ns[i] = NumLimit(0, MAX_VALUE);
@@ -30,6 +30,7 @@ public class ArrayExercise {
         // output
         out.print(YELLOW);
         CheckMirror(ns);
+        out.println();
         // ctrl
         CheckOut();
     }
@@ -49,7 +50,6 @@ public class ArrayExercise {
         if (!is_success) {
             PrintlnAdv("Không có cặp số đối xứng nào.");
         }
-        out.println();
     }
 
     // Check out

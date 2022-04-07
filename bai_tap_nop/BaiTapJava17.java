@@ -1,17 +1,17 @@
 package bai_tap_nop;
 
+import java.util.Random;
+
 import static java.lang.String.*;
 import static java.lang.System.*;
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 
-import java.util.Random;
-
 public class BaiTapJava17 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 17");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 17");
         // content
         Main();
     }
@@ -22,15 +22,13 @@ public class BaiTapJava17 {
 
     // Main
     private static void Main() {
-        // set
-        _counter = 0;
-        Random random = new Random();
-        var x = random.nextInt(_limit - 1) + 1;
         // cap
         out.println();
         PrintAdv(GREEN, "Nhập vào số dự đoán từ 1 đến 1000: ", RESET);
-        // output
-        GuessX(x);
+        // process
+        _counter = 0;
+        GuessX(new Random().nextInt(_limit - 1) + 1);
+        out.println();
         // ctrl
         CheckOut();
     }
@@ -40,13 +38,13 @@ public class BaiTapJava17 {
         _counter++;
         var n = NumLimit(1, _limit);
         if (n < x) {
-            PrintAdv("Nhỏ hơn số cần tìm, mời đoán lại: ");
+            PrintAdv(RED, "Nhỏ hơn số cần tìm, mời đoán lại: ", RESET);
             GuessX(x);
         } else if (n > x) {
-            PrintAdv("Lớn hơn số cần tìm, mời đoán lại: ");
+            PrintAdv(RED, "Lớn hơn số cần tìm, mời đoán lại: ", RESET);
             GuessX(x);
         } else {
-            PrintlnAdv(YELLOW, format("CHÍNH XÁC! Đoán sai %d lần.\n", _counter));
+            PrintlnAdv(YELLOW, format("CHÍNH XÁC! Đoán sai %d lần.", _counter));
         }
     }
 

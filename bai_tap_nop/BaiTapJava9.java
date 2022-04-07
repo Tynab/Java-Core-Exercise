@@ -12,8 +12,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava9 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 9");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 9");
         // content
         Main();
     }
@@ -25,15 +25,17 @@ public class BaiTapJava9 {
     // Main
     private static void Main() {
         // input
-        var ns = new int[_nMax];
+        out.println(CYAN);
+        PrintAdv(format("Nhập số tự nhiên có %d chữ số", _cMax));
         out.println();
-        PrintAdv(CYAN, format("Nhập số tự nhiên có %d chữ số\n", _cMax));
+        var ns = new int[_nMax];
         for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Số thứ %d: ", i + 1), RESET);
             ns[i] = NumLimit(10, 99); // cmax=2
         }
         // output
-        PrintlnAdv(YELLOW, format("Kết luận: %s.\n", CheckNumContain(CollectionChar(ns))));
+        PrintlnAdv(YELLOW, format("Kết luận: %s.", CheckNumContain(CollectionChar(ns))));
+        out.println();
         // ctrl
         CheckOut();
     }
@@ -59,7 +61,7 @@ public class BaiTapJava9 {
             for (var j = i + 1; j < list.size(); j++) {
                 var item = list.get(j);
                 for (var k = 0; k < item.length; k++) {
-                    var c = item[k];
+                    var c = item[k]; // not attach
                     if (of(list.get(i)).anyMatch(s -> s == c)) {
                         res = "true";
                         break;

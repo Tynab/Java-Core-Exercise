@@ -7,8 +7,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava1 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 1");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 1");
         // content
         Main();
     }
@@ -21,8 +21,7 @@ public class BaiTapJava1 {
 
     // Main
     private static void Main() {
-        out.println();
-        out.print(YELLOW);
+        out.println(YELLOW);
         for (var i = 1; i <= _rMax; i++) {
             var str = "";
             if (i < _rChange) {
@@ -36,6 +35,6 @@ public class BaiTapJava1 {
             }
             PrintlnAdv(str);
         }
-        PrintAdv(RESET, "\n");
+        out.println(RESET);
     }
 }

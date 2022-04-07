@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.Character.*;
-import static java.lang.Float.*;
+import static java.lang.Double.*;
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
@@ -17,11 +17,6 @@ public class YANMethod {
 
     // Parse int advanced
     public static int ParseIntAdv(Character c) {
-        return parseInt(valueOf(c));
-    }
-
-    // Parse float advanced
-    public static float ParseFloatAdv(Character c) {
         return parseInt(valueOf(c));
     }
 
@@ -47,50 +42,15 @@ public class YANMethod {
         return is_success;
     }
 
-    // Try parse float
-    public static boolean TryParseFloat(Character c) {
-        var is_success = true;
-        try {
-            parseFloat(valueOf(c));
-        } catch (Exception e) {
-            is_success = false;
-        }
-        return is_success;
-    }
-
-    // Try parse float
-    public static boolean TryParseFloat(String s) {
-        var is_success = true;
-        try {
-            parseFloat(s);
-        } catch (Exception e) {
-            is_success = false;
-        }
-        return is_success;
-    }
-
     // Scan int
     public static int ScanInt() {
         var n = 0;
         var s = _scan.nextLine();
-        if (TryParseFloat(s)) {
+        if (TryParseInt(s)) {
             n = parseInt(s);
         } else {
             PrintAdv(RED, "Dữ liệu bạn nhập không phải số nguyên, xin nhập lại: ", RESET);
             n = ScanInt();
-        }
-        return n;
-    }
-
-    // Scan float
-    public static float ScanFloat() {
-        var n = 0f;
-        var s = _scan.nextLine();
-        if (TryParseFloat(s)) {
-            n = parseFloat(s);
-        } else {
-            PrintAdv(RED, "Dữ liện bạn nhập không phải số, xin nhập lại: ", RESET);
-            n = ScanFloat();
         }
         return n;
     }
@@ -115,9 +75,49 @@ public class YANMethod {
         return n;
     }
 
-    // Number limit float
-    public static float NumLimit(float min, float max) {
-        var n = ScanFloat();
+    // Parse double advanced
+    public static double ParseDubAdv(Character c) {
+        return parseDouble(valueOf(c));
+    }
+
+    // Try parse double
+    public static boolean TryParseDub(Character c) {
+        var is_success = true;
+        try {
+            parseDouble(valueOf(c));
+        } catch (Exception e) {
+            is_success = false;
+        }
+        return is_success;
+    }
+
+    // Try parse double
+    public static boolean TryParseDub(String s) {
+        var is_success = true;
+        try {
+            parseDouble(s);
+        } catch (Exception e) {
+            is_success = false;
+        }
+        return is_success;
+    }
+
+    // Scan double
+    public static double ScanDub() {
+        var n = 0d;
+        var s = _scan.nextLine();
+        if (TryParseDub(s)) {
+            n = parseDouble(s);
+        } else {
+            PrintAdv(RED, "Dữ liện bạn nhập không phải số, xin nhập lại: ", RESET);
+            n = ScanDub();
+        }
+        return n;
+    }
+
+    // Number limit double
+    public static double NumLimit(double min, double max) {
+        var n = ScanDub();
         if (n < min || n > max) {
             PrintAdv(RED, "Không xác định, xin nhập lại: ", RESET);
             n = NumLimit(min, max);
@@ -125,14 +125,19 @@ public class YANMethod {
         return n;
     }
 
-    // Number limit float
-    public static float NumLimitEx(float min, float max) {
-        var n = ScanFloat();
+    // Number limit double
+    public static double NumLimitEx(double min, double max) {
+        var n = ScanDub();
         if (n <= min || n >= max) {
             PrintAdv(RED, "Không xác định, xin nhập lại: ", RESET);
             n = NumLimit(min, max);
         }
         return n;
+    }
+
+    // Double to perfect number
+    public static String WritePerfectDub(double n) {
+        return n == (int) n ? String.valueOf((int) n) : String.valueOf(n);
     }
 
     // Print advanced

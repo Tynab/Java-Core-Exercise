@@ -9,8 +9,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava4 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 4");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 4");
         // content
         Main();
     }
@@ -22,7 +22,8 @@ public class BaiTapJava4 {
         PrintAdv(GREEN, "Nhập vào số tự nhiên: ", RESET);
         var n = NumLimit(0, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Tổng các chữ số của %d là: %d\n", n, SumMe(n)));
+        PrintlnAdv(YELLOW, format("Tổng các chữ số của %d là: %d", n, SumMe(n)));
+        out.println();
         // ctrl
         CheckOut();
     }

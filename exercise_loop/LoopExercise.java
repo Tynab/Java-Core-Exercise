@@ -9,8 +9,8 @@ import static yan_lib.YANMethod.*;
 public class LoopExercise {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Loop Exersice");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Loop Exersice");
         // content
         Main();
     }
@@ -21,7 +21,8 @@ public class LoopExercise {
         out.println();
         PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
         // output
-        PrintlnAdv(YELLOW, format("Kết quả biểu thức là: %f\n", Calculator(NumLimit(1, MAX_VALUE))));
+        PrintlnAdv(YELLOW, format("Kết quả biểu thức là: %s", WritePerfectDub(Calculator(NumLimit(1, MAX_VALUE)))));
+        out.println();
         // ctrl
         CheckOut();
     }

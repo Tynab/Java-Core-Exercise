@@ -11,8 +11,8 @@ import static yan_lib.YANMethod.*;
 public class ListExercise {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Input Exersice");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Input Exersice");
         // content
         Main();
     }
@@ -24,8 +24,8 @@ public class ListExercise {
     // Main
     private static void Main() {
         // input
-        ArrayList<String> list = new ArrayList<>();
         out.println();
+        ArrayList<String> list = new ArrayList<>();
         for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Nhập chuỗi thứ %d: ", i + 1), RESET);
             list.add(_scan.nextLine());
@@ -47,7 +47,7 @@ public class ListExercise {
     private static String CheckContent(ArrayList<String> list) {
         // def
         var max = list.size();
-        var strFrm = ToLowerCaseAdv(list.get(0));
+        var strFrm = ToLowerCaseAdv(list.get(0)); // pin out loop
         var s = format("%d chuỗi giống nhau.", max);
         // check miss
         for (var i = 1; i < max; i++) {
@@ -63,7 +63,7 @@ public class ListExercise {
     private static String CheckCase(ArrayList<String> list) {
         // def
         var max = list.size();
-        var strFrm = list.get(0);
+        var strFrm = list.get(0); // pin out loop
         var s = format("%d chuỗi giống nhau.", max);
         // check miss
         for (var i = 1; i < max; i++) {

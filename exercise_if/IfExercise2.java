@@ -9,8 +9,8 @@ import static yan_lib.YANMethod.*;
 public class IfExercise2 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "If Exersice 2");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("If Exersice 2");
         // content
         Main();
     }
@@ -22,7 +22,8 @@ public class IfExercise2 {
         PrintAdv(GREEN, "Nhập vào số tự nhiên: ", RESET);
         var n = NumLimit(0, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Số %d có %d chữ số.\n", n, NumCounter(n)));
+        PrintlnAdv(YELLOW, format("Số %d có %d chữ số.", n, NumCounter(n)));
+        out.println();
         // ctrl
         CheckOut();
     }

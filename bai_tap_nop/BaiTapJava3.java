@@ -8,8 +8,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava3 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 3");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 3");
         // content
         Main();
     }
@@ -46,11 +46,10 @@ public class BaiTapJava3 {
 
     // Main
     private static void Main() {
-        out.println();
-        out.print(YELLOW);
+        out.println(YELLOW);
         for (var item : _key) {
             out.println(format("\t・%s: %s", ToLowerCaseAdv(item.replace('.', ' ')), getProperty(item)));
         }
-        PrintAdv(RESET, "\n");
+        out.println(RESET);
     }
 }

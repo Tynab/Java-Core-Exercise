@@ -9,8 +9,8 @@ import static yan_lib.YANMethod.*;
 public class IfExercise1 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "If Exersice 1");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("If Exersice 1");
         // content
         Main();
     }
@@ -21,14 +21,15 @@ public class IfExercise1 {
     // Main
     private static void Main() {
         // input
-        var ns = new int[_nMax];
         out.println();
+        var ns = new int[_nMax];
         for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);
             ns[i] = NumLimit(0, MAX_VALUE);
         }
         // output
-        PrintlnAdv(YELLOW, format("Kết luận: %s.\n", CheckOrder(ns)));
+        PrintlnAdv(YELLOW, format("Kết luận: %s.", CheckOrder(ns)));
+        out.println();
         // ctrl
         CheckOut();
     }

@@ -12,8 +12,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava2 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 2");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 2");
         // content
         Main();
     }
@@ -24,8 +24,8 @@ public class BaiTapJava2 {
     // Main
     private static void Main() {
         // selection
-        out.println();
-        PrintlnAdv(CYAN, "1. Đổi từ cơ số 10 sang nhị phân ");
+        out.println(CYAN);
+        PrintlnAdv("1. Đổi từ cơ số 10 sang nhị phân ");
         PrintlnAdv("2. Đổi từ nhị phân sang cơ sô 10");
         PrintAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
@@ -34,6 +34,7 @@ public class BaiTapJava2 {
         } else {
             BinToDec();
         }
+        out.println();
         // ctrl
         CheckOut();
     }
@@ -57,7 +58,7 @@ public class BaiTapJava2 {
         // input
         PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
         // output
-        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s\n", BinConvertor(NumLimit(1, MAX_VALUE))));
+        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s", BinConvertor(NumLimit(1, MAX_VALUE))));
     }
 
     // Binary convertor
@@ -75,7 +76,7 @@ public class BaiTapJava2 {
         // input
         PrintAdv(GREEN, "Nhập vào số nhị phân: ", RESET);
         // output
-        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s\n", DecConvertor(ScanBin())));
+        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s", DecConvertor(ScanBin())));
     }
 
     // Decimal convertor

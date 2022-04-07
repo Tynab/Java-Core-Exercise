@@ -9,8 +9,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava16 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 16");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 16");
         // content
         Main();
     }
@@ -25,11 +25,13 @@ public class BaiTapJava16 {
         PrintAdv(GREEN, "Nhập vào năm cần kiểm tra: ", RESET);
         var year = YearLimit(MAX_VALUE);
         // output
+        out.print(YELLOW);
         if (year == _latter_year_start || year % 4 != 0) {
-            PrintlnAdv(YELLOW, format("Năm %d là năm không nhuận.\n", year));
+            PrintlnAdv(format("Năm %d là năm không nhuận.", year));
         } else {
-            PrintlnAdv(YELLOW, format("Năm %d là năm nhuận.\n", year));
+            PrintlnAdv(format("Năm %d là năm nhuận.", year));
         }
+        out.println();
         // ctrl
         CheckOut();
     }

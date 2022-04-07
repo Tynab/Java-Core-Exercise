@@ -9,8 +9,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava10 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 10");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 10");
         // content
         Main();
     }
@@ -19,10 +19,11 @@ public class BaiTapJava10 {
     private static void Main() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào số tự nhiên: ", RESET);
-        var n = NumLimit(0, MAX_VALUE);
+        PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
+        var n = NumLimit(1, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Tổng các từ 1 đến %d là: %d\n", n, SumLim(n)));
+        PrintlnAdv(YELLOW, format("Tổng các từ 1 đến %d là: %d", n, SumLim(n)));
+        out.println();
         // ctrl
         CheckOut();
     }

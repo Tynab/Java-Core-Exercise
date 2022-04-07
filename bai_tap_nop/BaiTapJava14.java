@@ -12,8 +12,8 @@ import static yan_lib.YANMethod.*;
 public class BaiTapJava14 {
     public static void main(String[] args) {
         // tit
-        out.println();
-        PrintlnAdv(BLUE_BOLD, "Bài Tập Java 14");
+        out.println(BLUE_BOLD);
+        PrintlnAdv("Bài Tập Java 14");
         // content
         Main();
     }
@@ -23,7 +23,7 @@ public class BaiTapJava14 {
         // input
         out.println();
         PrintAdv(GREEN, "Nhập vào số phần tử mảng: ", RESET);
-        var n = NumLimit(1, MAX_VALUE);
+        var n = NumLimit(1, MAX_VALUE); // pin out loop
         List<Integer> list = new ArrayList<>();
         for (var i = 0; i < n; i++) {
             PrintAdv(GREEN, format("Nhập phần tử thứ %d: ", i + 1), RESET);
@@ -37,7 +37,8 @@ public class BaiTapJava14 {
         for (var i = 1; i < list.size(); i++) {
             s += format(", %d", list.get(i));
         }
-        PrintlnAdv(YELLOW, format("Mảng kết quả là: %s\n", s));
+        PrintlnAdv(YELLOW, format("Mảng kết quả là: %s", s));
+        out.println();
         // ctrl
         CheckOut();
     }
