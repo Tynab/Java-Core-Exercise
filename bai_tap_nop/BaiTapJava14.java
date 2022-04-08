@@ -25,19 +25,17 @@ public class BaiTapJava14 {
         PrintAdv(GREEN, "Nhập vào số phần tử mảng: ", RESET);
         var n = NumLimit(1, MAX_VALUE); // pin out loop
         List<Integer> list = new ArrayList<>();
+        var s = "";
         for (var i = 0; i < n; i++) {
             PrintAdv(GREEN, format("Nhập phần tử thứ %d: ", i + 1), RESET);
             var x = ScanInt();
             if (!list.contains(x)) {
                 list.add(x);
+                s += format(", %d", x);
             }
         }
         // output
-        var s = String.valueOf(list.get(0));
-        for (var i = 1; i < list.size(); i++) {
-            s += format(", %d", list.get(i));
-        }
-        PrintlnAdv(YELLOW, format("Mảng kết quả là: %s", s));
+        PrintlnAdv(YELLOW, format("Mảng kết quả là: %s", s.substring(2)));
         out.println();
         // ctrl
         CheckOut();

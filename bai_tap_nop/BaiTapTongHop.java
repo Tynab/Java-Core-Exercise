@@ -80,7 +80,8 @@ public class BaiTapTongHop {
     // Tính tiền giờ của nhóm khách hàng
     private static double TinhTienGio(double checkin, double checkout) {
         var tong_gio = checkout - checkin;
-        return tong_gio > 3 ? (_so_gio_chuan + (tong_gio - _so_gio_chuan) * _limit_percent / 100) * _tien_gio
+        return tong_gio > _so_gio_chuan
+                ? (_so_gio_chuan + (tong_gio - _so_gio_chuan) * _limit_percent / 100) * _tien_gio
                 : tong_gio * _tien_gio;
     }
 

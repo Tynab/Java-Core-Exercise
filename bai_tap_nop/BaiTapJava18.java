@@ -26,7 +26,7 @@ public class BaiTapJava18 {
         PrintAdv(GREEN, "Số tiền muốn tích lũy là: ", RESET);
         var sum = SumLimit(money, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Sau %s sẽ đạt được số tiền mong muốn.", Calculator(money, sum, rate)));
+        PrintlnAdv(YELLOW, format("Sau %s sẽ đạt được số tiền mong muốn.", Handle(money, sum, rate)));
         out.println();
         // ctrl
         CheckOut();
@@ -55,8 +55,8 @@ public class BaiTapJava18 {
         return n;
     }
 
-    // Calculator
-    private static String Calculator(int money, int sum, double rate) {
+    // Handle
+    private static String Handle(int money, int sum, double rate) {
         var month = 0;
         var incre = (double) money;
         while (incre < sum) {

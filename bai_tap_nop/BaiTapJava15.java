@@ -90,11 +90,11 @@ public class BaiTapJava15 {
         out.print(YELLOW);
         var max = list.size();
         if (max > 0) {
-            var txt = String.valueOf(list.get(0) + 1);
+            var sOut = String.valueOf(list.get(0) + 1);
             for (var i = 1; i < max; i++) {
-                txt += format(", %d", list.get(i) + 1);
+                sOut += format(", %d", list.get(i) + 1);
             }
-            PrintlnAdv(format("Chuỗi cần tìm ở vị trí thứ %s.", txt));
+            PrintlnAdv(format("Chuỗi cần tìm ở vị trí thứ %s.", sOut));
         } else {
             PrintlnAdv("Không tìm thấy chuỗi cần tìm.");
         }

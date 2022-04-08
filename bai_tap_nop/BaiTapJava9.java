@@ -3,9 +3,9 @@ package bai_tap_nop;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static java.util.stream.Stream.*;
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 
@@ -31,7 +31,7 @@ public class BaiTapJava9 {
         var ns = new int[_nMax];
         for (var i = 0; i < _nMax; i++) {
             PrintAdv(GREEN, format("Số thứ %d: ", i + 1), RESET);
-            ns[i] = NumLimit(10, 99); // cmax=2
+            ns[i] = NumLimit((int) pow(10, _cMax - 1), (int) pow(10, _cMax) - 1); // cmax=2
         }
         // output
         PrintlnAdv(YELLOW, format("Kết luận: %s.", CheckNumContain(CollectionChar(ns))));
@@ -41,28 +41,27 @@ public class BaiTapJava9 {
     }
 
     // Collection
-    private static List<Character[]> CollectionChar(int... args) {
-        List<Character[]> list = new ArrayList<>();
+    private static List<String> CollectionChar(int... args) {
+        List<String> list = new ArrayList<>();
         for (var item : args) {
-            var cs = new Character[_cMax];
-            var num = valueOf(item);
-            for (var i = 0; i < num.length(); i++) {
-                cs[i] = num.charAt(i);
+            var s = "";
+            var str = valueOf(item);
+            for (var i = 0; i < str.length(); i++) {
+                s += str.charAt(i);
             }
-            list.add(cs);
+            list.add(s);
         }
         return list;
     }
 
     // Check number contain in list
-    private static String CheckNumContain(List<Character[]> list) {
+    private static String CheckNumContain(List<String> list) {
         var res = "false";
         for (var i = 0; i < list.size() - 1; i++) {
             for (var j = i + 1; j < list.size(); j++) {
                 var item = list.get(j);
-                for (var k = 0; k < item.length; k++) {
-                    var c = item[k]; // not attach
-                    if (of(list.get(i)).anyMatch(s -> s == c)) {
+                for (var k = 0; k < item.length(); k++) {
+                    if (list.get(i).contains(valueOf(item.charAt(k)))) {
                         res = "true";
                         break;
                     }

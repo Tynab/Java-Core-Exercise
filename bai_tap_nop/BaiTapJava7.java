@@ -1,8 +1,5 @@
 package bai_tap_nop;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
@@ -24,28 +21,22 @@ public class BaiTapJava7 {
         out.println();
         PrintAdv(GREEN, "Nhập vào số tự nhiên: ", RESET);
         var n = NumLimit(0, MAX_VALUE);
-        // process
-        var list = DivisorList(n);
-        var s = format("Các ước số của %d là: %d", n, list.get(0));
-        for (var i = 1; i < list.size(); i++) {
-            s += format(", %d", list.get(i));
-        }
         // output
-        PrintlnAdv(YELLOW, format("%s", s));
+        PrintlnAdv(YELLOW, format("Các ước số của %d là: %s", n, DivisorList(n)));
         out.println();
         // ctrl
         CheckOut();
     }
 
     // Divisor list
-    private static List<Integer> DivisorList(int n) {
-        List<Integer> list = new ArrayList<>();
+    private static String DivisorList(int n) {
+        var s = "";
         for (var i = 1; i <= n; i++) {
             if (n % i == 0) {
-                list.add(i);
+                s += format(", %d", i);
             }
         }
-        return list;
+        return s.substring(2);
     }
 
     // Check out

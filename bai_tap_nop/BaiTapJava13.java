@@ -98,27 +98,17 @@ public class BaiTapJava13 {
     // Unit 3
     private static void UnitC(List<Integer> list) {
         // scan
-        var is_max_has = false;
-        var is_min_has = false;
-        var max = MIN_VALUE;
-        var min = MAX_VALUE;
+        List<Integer> resList = new ArrayList<>();
         for (var item : list) {
             if (item < 0) {
-                if (item > max) {
-                    is_max_has = true;
-                    max = item;
-                }
-                if (item < min) {
-                    is_min_has = true;
-                    min = item;
-                }
+                resList.add(item);
             }
         }
         // check back
         out.print(YELLOW);
-        if (is_max_has || is_min_has) {
-            PrintlnAdv(format("Phần tử âm lớn nhất trong mảng là: %d", max));
-            PrintlnAdv(format("Phần tử âm nhỏ nhất trong mảng là: %d", min));
+        if (resList.size() > 0) {
+            PrintlnAdv(format("Phần tử âm lớn nhất trong mảng là: %d", max(resList)));
+            PrintlnAdv(format("Phần tử âm nhỏ nhất trong mảng là: %d", min(resList)));
         } else {
             PrintlnAdv("Mảng không có phần tử âm.");
         }
@@ -127,27 +117,17 @@ public class BaiTapJava13 {
     // Unit 4
     private static void UnitD(List<Integer> list) {
         // scan
-        var is_max_has = false;
-        var is_min_has = false;
-        var max = MIN_VALUE;
-        var min = MAX_VALUE;
+        List<Integer> resList = new ArrayList<>();
         for (var item : list) {
             if (item > 0) {
-                if (item > max) {
-                    is_max_has = true;
-                    max = item;
-                }
-                if (item < min) {
-                    is_min_has = true;
-                    min = item;
-                }
+                resList.add(item);
             }
         }
         // check back
         out.print(YELLOW);
-        if (is_max_has || is_min_has) {
-            PrintlnAdv(format("Phần tử dương lớn nhất trong mảng là: %d", max));
-            PrintlnAdv(format("Phần tử dương nhỏ nhất trong mảng là: %d", min));
+        if (resList.size() > 0) {
+            PrintlnAdv(format("Phần tử dương lớn nhất trong mảng là: %d", max(resList)));
+            PrintlnAdv(format("Phần tử dương nhỏ nhất trong mảng là: %d", min(resList)));
         } else {
             PrintlnAdv("Mảng không có phần tử dương.");
         }
@@ -155,36 +135,33 @@ public class BaiTapJava13 {
 
     // Unit 5
     private static void UnitE(List<Integer> list) {
-        // split
-        List<Integer> listE = new ArrayList<>();
-        List<Integer> listO = new ArrayList<>();
+        // transfer
+        List<Integer> shortList = new ArrayList<>();
         for (var item : list) {
-            if (item % 2 == 0) {
-                listE.add(item);
-            } else {
-                listO.add(item);
+            if (!shortList.contains(item)) {
+                shortList.add(item);
             }
         }
-        // even
-        out.print(YELLOW);
-        var maxE = listE.size();
-        if (maxE > 0) {
-            var sE = String.valueOf(listE.get(0));
-            for (var i = 1; i < maxE; i++) {
-                sE += format(", %d", listE.get(i));
+        // split
+        var sEven = "";
+        var sOdd = "";
+        for (var item : shortList) {
+            if (item % 2 == 0) {
+                sEven += format(", %d", item);
+            } else {
+                sOdd += format(", %d", item);
             }
-            PrintlnAdv(format("Các phần tử chẵn trong mảng là: %s", sE));
+        }
+        out.print(YELLOW);
+        // even
+        if (sEven.length() > 2) {
+            PrintlnAdv(format("Các phần tử chẵn trong mảng là: %s", sEven.substring(2)));
         } else {
             PrintlnAdv("Mảng không có phần tử chẵn.");
         }
         // odd
-        var maxO = listO.size();
-        if (maxO > 0) {
-            var sO = String.valueOf(listO.get(0));
-            for (var i = 1; i < maxO; i++) {
-                sO += format(", %d", listO.get(i));
-            }
-            PrintlnAdv(format("Các phần tử lẻ trong mảng là: %s", sO));
+        if (sOdd.length() > 2) {
+            PrintlnAdv(format("Các phần tử lẻ trong mảng là: %s", sOdd.substring(2)));
         } else {
             PrintlnAdv("Mảng không có phần tử lẻ.");
         }
@@ -207,7 +184,7 @@ public class BaiTapJava13 {
         PrintlnAdv(YELLOW, format("Mảng mới là: %s", s));
     }
 
-    // Unit 6
+    // Unit 7
     private static void UnitG(List<Integer> list) {
         // input
         PrintAdv(GREEN, "Nhập vị trí phần tử cần xóa trong mảng: ", RESET);
