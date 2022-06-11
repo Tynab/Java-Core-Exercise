@@ -1,11 +1,13 @@
 package exercise_input;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
+import java.util.*;
+
+import java.text.*;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
 import static java.util.TimeZone.*;
+
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 

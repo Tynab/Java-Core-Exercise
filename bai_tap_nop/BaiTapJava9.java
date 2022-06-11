@@ -6,6 +6,7 @@ import java.util.List;
 import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
+
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 

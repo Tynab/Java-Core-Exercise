@@ -1,6 +1,7 @@
 package exercise_output;
 
 import static java.lang.System.*;
+
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 
