@@ -1,7 +1,6 @@
 package exercise_input;
 
 import java.util.*;
-
 import java.text.*;
 
 import static java.lang.String.*;

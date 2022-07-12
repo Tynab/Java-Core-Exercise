@@ -1,7 +1,6 @@
 package bai_tap_nop;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static java.lang.Math.*;
 import static java.lang.String.*;

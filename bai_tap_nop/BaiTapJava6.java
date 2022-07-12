@@ -1,6 +1,6 @@
 package bai_tap_nop;
 
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
