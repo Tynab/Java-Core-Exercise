@@ -5,9 +5,8 @@ import java.util.*;
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-
-import static java.util.Collections.*;
-
+import static java.util.Collections.max;
+import static java.util.Collections.min;
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 

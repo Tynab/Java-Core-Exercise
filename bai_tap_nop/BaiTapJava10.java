@@ -3,7 +3,6 @@ package bai_tap_nop;
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-
 import static yan_lib.YANConstant.*;
 import static yan_lib.YANMethod.*;
 
