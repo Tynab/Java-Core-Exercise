@@ -4,33 +4,33 @@ import static java.lang.Integer.*;
 import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava11 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 11");
+        printlnAdv("Bài Tập Java 11");
         // content
-        Main();
+        run();
     }
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
-        var n = NumLimit(1, MAX_VALUE);
+        printAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
+        var n = numLimit(1, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Số lớn nhất nhỏ hơn log2(%d) là: %d", n, MaxLimLog2(n)));
+        printlnAdv(YELLOW, format("Số lớn nhất nhỏ hơn log2(%d) là: %d", n, maxLimLog2(n)));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Max lim log2
-    private static int MaxLimLog2(int n) {
+    private static int maxLimLog2(int n) {
         var max = 0;
         var log = log(n) / log(2); // pin out loop
         for (var i = 1; i <= n; i++) {
@@ -44,9 +44,9 @@ public class BaiTapJava11 {
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

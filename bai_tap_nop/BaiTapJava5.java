@@ -3,50 +3,50 @@ package bai_tap_nop;
 import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava5 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 5");
+        printlnAdv("Bài Tập Java 5");
         // content
-        Main();
+        run();
     }
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(CYAN, "Nhập tọa độ điểm A");
+        printAdv(CYAN, "Nhập tọa độ điểm A");
         out.println();
-        PrintAdv(GREEN, "xA = ", RESET);
-        var xA = ScanInt();
-        PrintAdv(GREEN, "yA = ", RESET);
-        var yA = ScanInt();
-        PrintAdv(CYAN, "Nhập tọa độ điểm B");
+        printAdv(GREEN, "xA = ", RESET);
+        var xA = scanInt();
+        printAdv(GREEN, "yA = ", RESET);
+        var yA = scanInt();
+        printAdv(CYAN, "Nhập tọa độ điểm B");
         out.println();
-        PrintAdv(GREEN, "xB = ", RESET);
-        var xB = ScanInt();
-        PrintAdv(GREEN, "yB = ", RESET);
-        var yB = ScanInt();
+        printAdv(GREEN, "xB = ", RESET);
+        var xB = scanInt();
+        printAdv(GREEN, "yB = ", RESET);
+        var yB = scanInt();
         // output
-        PrintlnAdv(YELLOW, format("Độ dài đoạn thằng AB là: %s", WritePerfectDub(Length(xA, yA, xB, yB))));
+        printlnAdv(YELLOW, format("Độ dài đoạn thằng AB là: %s", writePerfectDub(length(xA, yA, xB, yB))));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Length AB
-    private static double Length(int x1, int y1, int x2, int y2) {
+    private static double length(int x1, int y1, int x2, int y2) {
         return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

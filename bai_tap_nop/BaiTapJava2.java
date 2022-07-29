@@ -6,47 +6,47 @@ import static java.lang.Integer.*;
 import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava2 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 2");
+        printlnAdv("Bài Tập Java 2");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static Scanner _scan = new Scanner(in);
+    private static final Scanner scan = new Scanner(in);
 
     // Main
-    private static void Main() {
+    private static void run() {
         // selection
         out.println(CYAN);
-        PrintlnAdv("1. Đổi từ cơ số 10 sang nhị phân ");
-        PrintlnAdv("2. Đổi từ nhị phân sang cơ sô 10");
-        PrintAdv("Chọn 1 trong các phương án trên: ");
+        printlnAdv("1. Đổi từ cơ số 10 sang nhị phân ");
+        printlnAdv("2. Đổi từ nhị phân sang cơ sô 10");
+        printAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
-        if (NumLimit(1, 2) == 1) {
-            DecToBin();
+        if (numLimit(1, 2) == 1) {
+            decToBin();
         } else {
-            BinToDec();
+            binToDec();
         }
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Scan binary
-    private static String ScanBin() {
-        var s = _scan.nextLine();
+    private static String scanBin() {
+        var s = scan.nextLine();
         for (var i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
             if (c != '1' && c != '0') {
-                PrintAdv(RED, "Dữ liệu nhập vào không phải số nhị phân, xin nhập lại: ", RESET);
-                s = ScanBin();
+                printAdv(RED, "Dữ liệu nhập vào không phải số nhị phân, xin nhập lại: ", RESET);
+                s = scanBin();
                 break;
             }
         }
@@ -54,15 +54,15 @@ public class BaiTapJava2 {
     }
 
     // Decimal to binary
-    private static void DecToBin() {
+    private static void decToBin() {
         // input
-        PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
+        printAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
         // output
-        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s", BinConvertor(NumLimit(1, MAX_VALUE))));
+        printlnAdv(YELLOW, format("Số nhị phân được đổi là: %s", binConvertor(numLimit(1, MAX_VALUE))));
     }
 
     // Binary convertor
-    private static String BinConvertor(int n) {
+    private static String binConvertor(int n) {
         var s = "";
         while (n > 0) {
             s += String.valueOf(n % 2);
@@ -72,29 +72,29 @@ public class BaiTapJava2 {
     }
 
     // Binary to decimal
-    private static void BinToDec() {
+    private static void binToDec() {
         // input
-        PrintAdv(GREEN, "Nhập vào số nhị phân: ", RESET);
+        printAdv(GREEN, "Nhập vào số nhị phân: ", RESET);
         // output
-        PrintlnAdv(YELLOW, format("Số nhị phân được đổi là: %s", DecConvertor(ScanBin())));
+        printlnAdv(YELLOW, format("Số nhị phân được đổi là: %s", decConvertor(scanBin())));
     }
 
     // Decimal convertor
-    private static int DecConvertor(String s) {
+    private static int decConvertor(String s) {
         var sum = 0;
         for (var i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
-            if (TryParseInt(c)) {
-                sum += ParseIntAdv(c) * pow(2, (s.length() - 1 - i));
+            if (tryParseInt(c)) {
+                sum += parseIntAdv(c) * pow(2, (s.length() - 1 - i));
             }
         }
         return sum;
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

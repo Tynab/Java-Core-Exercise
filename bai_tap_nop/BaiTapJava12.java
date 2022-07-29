@@ -2,50 +2,50 @@ package bai_tap_nop;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava12 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 12");
+        printlnAdv("Bài Tập Java 12");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final int _min = 1;
-    private static final int _max = 9;
+    private static final int MIN = 1;
+    private static final int MAX = 9;
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(GREEN, format("Nhập vào số từ %d đến %d: ", _min, _max), RESET);
+        printAdv(GREEN, format("Nhập vào số từ %d đến %d: ", MIN, MAX), RESET);
         // output
-        DrawStar(NumLimit(_min, _max));
+        drawStar(numLimit(MIN, MAX));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Drawing star
-    private static void DrawStar(int n) {
+    private static void drawStar(int n) {
         out.print(YELLOW);
         for (var i = 1; i <= n; i++) {
             var s = "";
             for (var j = 1; j <= n; j++) {
                 s += j <= i ? valueOf(j) : " ";
             }
-            PrintlnAdv(s);
+            printlnAdv(s);
         }
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

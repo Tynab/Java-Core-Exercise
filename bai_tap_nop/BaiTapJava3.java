@@ -2,20 +2,20 @@ package bai_tap_nop;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava3 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 3");
+        printlnAdv("Bài Tập Java 3");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final String[] _key = {
+    private static final String[] KEY = {
             "java.version",
             "java.version.date",
             "java.vendor",
@@ -45,10 +45,10 @@ public class BaiTapJava3 {
     };
 
     // Main
-    private static void Main() {
+    private static void run() {
         out.println(YELLOW);
-        for (var item : _key) {
-            out.println(format("\t・%s: %s", ToLowerCaseAdv(item.replace('.', ' ')), getProperty(item)));
+        for (var item : KEY) {
+            out.println(format("\t・%s: %s", toLowerCaseAdv(item.replace('.', ' ')), getProperty(item)));
         }
         out.println(RESET);
     }

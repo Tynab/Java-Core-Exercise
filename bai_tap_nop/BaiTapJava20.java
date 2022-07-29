@@ -5,39 +5,39 @@ import java.util.*;
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava20 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 20");
+        printlnAdv("Bài Tập Java 20");
         // content
-        Main();
+        run();
     }
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào số phần tử của mảng số tự nhiên: ", RESET);
-        var n = NumLimit(1, MAX_VALUE); // pin out loop
-        List<Integer> list = new ArrayList<>();
+        printAdv(GREEN, "Nhập vào số phần tử của mảng số tự nhiên: ", RESET);
+        var n = numLimit(1, MAX_VALUE); // pin out loop
+        var list = new ArrayList<Integer>();
         for (var i = 0; i < n; i++) {
-            PrintAdv(GREEN, format("Nhập phần tử thứ %d: ", i + 1), RESET);
-            list.add(NumLimit(0, MAX_VALUE));
+            printAdv(GREEN, format("Nhập phần tử thứ %d: ", i + 1), RESET);
+            list.add(numLimit(0, MAX_VALUE));
         }
         // output
         out.print(YELLOW);
-        SplitEO(list);
+        splitEO(list);
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Split even-odd
-    private static void SplitEO(List<Integer> list) {
+    private static void splitEO(List<Integer> list) {
         // split
         var sEven = "";
         var sOdd = "";
@@ -50,22 +50,22 @@ public class BaiTapJava20 {
         }
         // even
         if (sEven.length() > 2) {
-            PrintlnAdv(format("Mảng chẵn là: %s", sEven.substring(2)));
+            printlnAdv(format("Mảng chẵn là: %s", sEven.substring(2)));
         } else {
-            PrintlnAdv("Mảng không có phần tử chẵn.");
+            printlnAdv("Mảng không có phần tử chẵn.");
         }
         // odd
         if (sOdd.length() > 2) {
-            PrintlnAdv(format("Mảng lẻ là: %s", sOdd.substring(2)));
+            printlnAdv(format("Mảng lẻ là: %s", sOdd.substring(2)));
         } else {
-            PrintlnAdv("Mảng không có phần tử lẻ.");
+            printlnAdv("Mảng không có phần tử lẻ.");
         }
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

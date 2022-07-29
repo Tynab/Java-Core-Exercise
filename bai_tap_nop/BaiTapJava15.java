@@ -4,86 +4,86 @@ import java.util.*;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava15 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 15");
+        printlnAdv("Bài Tập Java 15");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final Scanner _scan = new Scanner(in);
+    private static final Scanner scan = new Scanner(in);
 
     // Main
-    private static void Main() {
+    private static void run() {
         // cap
         out.println();
-        PrintAdv(GREEN, "Nhập vào chuỗi: ", RESET);
-        var s = _scan.nextLine();
+        printAdv(GREEN, "Nhập vào chuỗi: ", RESET);
+        var s = scan.nextLine();
         // cap
         out.print(CYAN);
-        PrintlnAdv("1. In ra độ dài chuỗi                  ");
-        PrintlnAdv("2. In ra ký tự tại một vị trí nhất định");
-        PrintlnAdv("3. Kiểm tra chuỗi phụ trong chuỗi      ");
-        PrintAdv("Chọn 1 trong các phương án trên: ");
+        printlnAdv("1. In ra độ dài chuỗi                  ");
+        printlnAdv("2. In ra ký tự tại một vị trí nhất định");
+        printlnAdv("3. Kiểm tra chuỗi phụ trong chuỗi      ");
+        printAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
         // output
-        switch (NumLimit(1, 3)) {
+        switch (numLimit(1, 3)) {
             case 1: {
-                UnitA(s);
+                unitA(s);
                 break;
             }
             case 2: {
-                UnitB(s);
+                unitB(s);
                 break;
             }
             case 3: {
-                UnitC(s);
+                unitC(s);
                 break;
             }
         }
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Get all index of
-    private static void GetAllIndexOf(List<Integer> list, String s, String str, int padding) {
+    private static void getAllIndexOf(List<Integer> list, String s, String str, int padding) {
         if (s.contains(str)) {
             var index = s.indexOf(str);
             list.add(index + padding);
             var startPath = index + 1;
             padding += startPath;
-            GetAllIndexOf(list, s.substring(startPath), str, padding);
+            getAllIndexOf(list, s.substring(startPath), str, padding);
         }
     }
 
     // Unit 1
-    private static void UnitA(String s) {
-        PrintlnAdv(YELLOW, format("Độ dài chuỗi là: %d", s.length()));
+    private static void unitA(String s) {
+        printlnAdv(YELLOW, format("Độ dài chuỗi là: %d", s.length()));
     }
 
     // Unit 2
-    private static void UnitB(String s) {
+    private static void unitB(String s) {
         // input
-        PrintAdv(GREEN, "Nhập vị trí ký tự cần tìm trong chuỗi: ", RESET);
-        var path = NumLimit(1, s.length());
+        printAdv(GREEN, "Nhập vị trí ký tự cần tìm trong chuỗi: ", RESET);
+        var path = numLimit(1, s.length());
         // out put
-        PrintlnAdv(YELLOW, format("Ký tự ở vị trí thứ %d trong chuỗi là: %c", path, s.charAt(path - 1)));
+        printlnAdv(YELLOW, format("Ký tự ở vị trí thứ %d trong chuỗi là: %c", path, s.charAt(path - 1)));
     }
 
     // Unit 3
-    private static void UnitC(String s) {
+    private static void unitC(String s) {
         // input
-        PrintAdv(GREEN, "Nhập chuỗi cần tìm: ", RESET);
+        printAdv(GREEN, "Nhập chuỗi cần tìm: ", RESET);
         // process
-        List<Integer> list = new ArrayList<>();
-        GetAllIndexOf(list, s, _scan.nextLine(), 0);
+        var list = new ArrayList<Integer>();
+        getAllIndexOf(list, s, scan.nextLine(), 0);
         // out put
         out.print(YELLOW);
         var max = list.size();
@@ -92,16 +92,16 @@ public class BaiTapJava15 {
             for (var i = 1; i < max; i++) {
                 sOut += format(", %d", list.get(i) + 1);
             }
-            PrintlnAdv(format("Chuỗi cần tìm ở vị trí thứ %s.", sOut));
+            printlnAdv(format("Chuỗi cần tìm ở vị trí thứ %s.", sOut));
         } else {
-            PrintlnAdv("Không tìm thấy chuỗi cần tìm.");
+            printlnAdv("Không tìm thấy chuỗi cần tìm.");
         }
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

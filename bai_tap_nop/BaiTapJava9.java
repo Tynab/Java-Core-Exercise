@@ -5,43 +5,43 @@ import java.util.*;
 import static java.lang.Math.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava9 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 9");
+        printlnAdv("Bài Tập Java 9");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final int _nMax = 2;
-    private static final int _cMax = 2;
+    private static final int N_MAX = 2;
+    private static final int C_MAX = 2;
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println(CYAN);
-        PrintAdv(format("Nhập số tự nhiên có %d chữ số", _cMax));
+        printAdv(format("Nhập số tự nhiên có %d chữ số", C_MAX));
         out.println();
-        var ns = new int[_nMax];
-        for (var i = 0; i < _nMax; i++) {
-            PrintAdv(GREEN, format("Số thứ %d: ", i + 1), RESET);
-            ns[i] = NumLimit((int) pow(10, _cMax - 1), (int) pow(10, _cMax) - 1); // cmax=2
+        var ns = new int[N_MAX];
+        for (var i = 0; i < N_MAX; i++) {
+            printAdv(GREEN, format("Số thứ %d: ", i + 1), RESET);
+            ns[i] = numLimit((int) pow(10, C_MAX - 1), (int) pow(10, C_MAX) - 1); // cmax=2
         }
         // output
-        PrintlnAdv(YELLOW, format("Kết luận: %s.", CheckNumContain(CollectionChar(ns))));
+        printlnAdv(YELLOW, format("Kết luận: %s.", checkNumContain(collectionChar(ns))));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Collection
-    private static List<String> CollectionChar(int... args) {
-        List<String> list = new ArrayList<>();
+    private static List<String> collectionChar(int... args) {
+        var list = new ArrayList<String>();
         for (var item : args) {
             var s = "";
             var str = valueOf(item);
@@ -54,7 +54,7 @@ public class BaiTapJava9 {
     }
 
     // Check number contain in list
-    private static String CheckNumContain(List<String> list) {
+    private static String checkNumContain(List<String> list) {
         var res = "false";
         for (var i = 0; i < list.size() - 1; i++) {
             for (var j = i + 1; j < list.size(); j++) {
@@ -71,9 +71,9 @@ public class BaiTapJava9 {
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

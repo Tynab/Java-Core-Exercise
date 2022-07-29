@@ -3,60 +3,60 @@ package bai_tap_nop;
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava18 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 18");
+        printlnAdv("Bài Tập Java 18");
         // content
-        Main();
+        run();
     }
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào số tiền hiện có: ", RESET);
-        var money = NumLimit(1, MAX_VALUE);
-        PrintAdv(GREEN, "Nhập vào lãi suất (%): ", RESET);
-        var rate = RateLimit(0, 100);
-        PrintAdv(GREEN, "Số tiền muốn tích lũy là: ", RESET);
-        var sum = SumLimit(money, MAX_VALUE);
+        printAdv(GREEN, "Nhập vào số tiền hiện có: ", RESET);
+        var money = numLimit(1, MAX_VALUE);
+        printAdv(GREEN, "Nhập vào lãi suất (%): ", RESET);
+        var rate = rateLimit(0, 100);
+        printAdv(GREEN, "Số tiền muốn tích lũy là: ", RESET);
+        var sum = sumLimit(money, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Sau %s sẽ đạt được số tiền mong muốn.", Handle(money, sum, rate)));
+        printlnAdv(YELLOW, format("Sau %s sẽ đạt được số tiền mong muốn.", handle(money, sum, rate)));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Rate limit
-    public static double RateLimit(double min, double max) {
-        var n = ScanDub();
+    public static double rateLimit(double min, double max) {
+        var n = scanDub();
         if (n <= min || n > max) {
-            PrintAdv(RED, "Lãi suất từ 0% đến 100%, xin nhập lại: ", RESET);
-            n = RateLimit(min, max);
+            printAdv(RED, "Lãi suất từ 0% đến 100%, xin nhập lại: ", RESET);
+            n = rateLimit(min, max);
         }
         return n;
     }
 
     // Sum limit
-    private static int SumLimit(int min, int max) {
-        var n = ScanInt();
+    private static int sumLimit(int min, int max) {
+        var n = scanInt();
         if (n < min) {
-            PrintAdv(RED, "Số tiền mong muốn phải lớn hơn số tiền hiện có, xin nhập lại: ", RESET);
-            n = SumLimit(min, max);
+            printAdv(RED, "Số tiền mong muốn phải lớn hơn số tiền hiện có, xin nhập lại: ", RESET);
+            n = sumLimit(min, max);
         } else if (n > max) {
-            PrintAdv(RED, "Không xác định, xin nhập lại: ", RESET);
-            n = SumLimit(min, max);
+            printAdv(RED, "Không xác định, xin nhập lại: ", RESET);
+            n = sumLimit(min, max);
         }
         return n;
     }
 
     // Handle
-    private static String Handle(int money, int sum, double rate) {
+    private static String handle(int money, int sum, double rate) {
         var month = 0;
         var incre = (double) money;
         while (incre < sum) {
@@ -69,9 +69,9 @@ public class BaiTapJava18 {
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

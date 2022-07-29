@@ -3,33 +3,33 @@ package bai_tap_nop;
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava10 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 10");
+        printlnAdv("Bài Tập Java 10");
         // content
-        Main();
+        run();
     }
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
-        var n = NumLimit(1, MAX_VALUE);
+        printAdv(GREEN, "Nhập vào số nguyên dương: ", RESET);
+        var n = numLimit(1, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Tổng các từ 1 đến %d là: %d", n, SumLim(n)));
+        printlnAdv(YELLOW, format("Tổng các từ 1 đến %d là: %d", n, sumLim(n)));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Sum lim
-    private static int SumLim(int n) {
+    private static int sumLim(int n) {
         var sum = 0;
         for (var i = 1; i <= n; i++) {
             sum += i;
@@ -38,9 +38,9 @@ public class BaiTapJava10 {
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

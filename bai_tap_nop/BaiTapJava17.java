@@ -4,54 +4,54 @@ import java.util.*;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava17 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 17");
+        printlnAdv("Bài Tập Java 17");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final int _limit = 1000;
-    private static int _counter;
+    private static final int LIMIT = 1000;
+    private static int counter;
 
     // Main
-    private static void Main() {
+    private static void run() {
         // cap
         out.println();
-        PrintAdv(GREEN, "Nhập vào số dự đoán từ 1 đến 1000: ", RESET);
+        printAdv(GREEN, "Nhập vào số dự đoán từ 1 đến 1000: ", RESET);
         // process
-        _counter = 0;
-        GuessX(new Random().nextInt(_limit - 1) + 1);
+        counter = 0;
+        guessX(new Random().nextInt(LIMIT - 1) + 1);
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Guess x
-    private static void GuessX(int x) {
-        _counter++;
-        var n = NumLimit(1, _limit);
+    private static void guessX(int x) {
+        counter++;
+        var n = numLimit(1, LIMIT);
         if (n < x) {
-            PrintAdv(RED, "Nhỏ hơn số cần tìm, mời đoán lại: ", RESET);
-            GuessX(x);
+            printAdv(RED, "Nhỏ hơn số cần tìm, mời đoán lại: ", RESET);
+            guessX(x);
         } else if (n > x) {
-            PrintAdv(RED, "Lớn hơn số cần tìm, mời đoán lại: ", RESET);
-            GuessX(x);
+            printAdv(RED, "Lớn hơn số cần tìm, mời đoán lại: ", RESET);
+            guessX(x);
         } else {
-            PrintlnAdv(YELLOW, format("CHÍNH XÁC! Đoán sai %d lần.", _counter));
+            printlnAdv(YELLOW, format("CHÍNH XÁC! Đoán sai %d lần.", counter));
         }
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

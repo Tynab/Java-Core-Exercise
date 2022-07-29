@@ -4,53 +4,53 @@ import java.util.*;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class ListExercise {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Input Exersice");
+        printlnAdv("Input Exersice");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final Scanner _scan = new Scanner(in);
-    private static final int _nMax = 2;
+    private static final Scanner scan = new Scanner(in);
+    private static final int N_MAX = 2;
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        ArrayList<String> list = new ArrayList<>();
-        for (var i = 0; i < _nMax; i++) {
-            PrintAdv(GREEN, format("Nhập chuỗi thứ %d: ", i + 1), RESET);
-            list.add(_scan.nextLine());
+        var list = new ArrayList<String>();
+        for (var i = 0; i < N_MAX; i++) {
+            printAdv(GREEN, format("Nhập chuỗi thứ %d: ", i + 1), RESET);
+            list.add(scan.nextLine());
         }
         // cap
-        PrintlnAdv(CYAN, "Phân biệt chữ hoa chữ thường?");
-        PrintlnAdv("1. Có   ");
-        PrintlnAdv("2. Không");
-        PrintAdv("Chọn 1 trong các phương án trên: ");
+        printlnAdv(CYAN, "Phân biệt chữ hoa chữ thường?");
+        printlnAdv("1. Có   ");
+        printlnAdv("2. Không");
+        printAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
         // output
-        PrintlnAdv(YELLOW, NumLimit(1, 2) == 1 ? CheckCase(list) : CheckContent(list));
+        printlnAdv(YELLOW, numLimit(1, 2) == 1 ? checkCase(list) : checkContent(list));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Check content without case
-    private static String CheckContent(ArrayList<String> list) {
+    private static String checkContent(List<String> list) {
         // def
         var max = list.size();
-        var strFrm = ToLowerCaseAdv(list.get(0)); // pin out loop
+        var strFrm = toLowerCaseAdv(list.get(0)); // pin out loop
         var s = format("%d chuỗi giống nhau.", max);
         // check miss
         for (var i = 1; i < max; i++) {
-            if (!ToLowerCaseAdv(list.get(i)).equals(strFrm)) {
+            if (!toLowerCaseAdv(list.get(i)).equals(strFrm)) {
                 s = format("%d chuỗi khác nhau.", max);
                 break;
             }
@@ -59,7 +59,7 @@ public class ListExercise {
     }
 
     // Check case
-    private static String CheckCase(ArrayList<String> list) {
+    private static String checkCase(List<String> list) {
         // def
         var max = list.size();
         var strFrm = list.get(0); // pin out loop
@@ -75,9 +75,9 @@ public class ListExercise {
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

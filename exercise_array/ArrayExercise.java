@@ -3,59 +3,59 @@ package exercise_array;
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class ArrayExercise {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Array Exersice");
+        printlnAdv("Array Exersice");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final int _nMax = 10;
+    private static final int N_MAX = 10;
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        var ns = new int[_nMax];
-        for (var i = 0; i < _nMax; i++) {
-            PrintAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);
-            ns[i] = NumLimit(0, MAX_VALUE);
+        var ns = new int[N_MAX];
+        for (var i = 0; i < N_MAX; i++) {
+            printAdv(GREEN, format("Nhập số tự nhiên thứ %d: ", i + 1), RESET);
+            ns[i] = numLimit(0, MAX_VALUE);
         }
         // output
         out.print(YELLOW);
-        CheckMirror(ns);
+        checkMirror(ns);
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Check mirror
-    private static void CheckMirror(int... args) {
+    private static void checkMirror(int... args) {
         // pick
-        var is_success = false;
+        var isSuccess = false;
         var max = args.length;
         for (var i = 0; i < max / 2; i++) {
             if (args[i] == args[max - 1 - i]) {
-                is_success = true;
-                PrintlnAdv(format("Số %d đối xứng ở cặp vị trí %d và %d.", args[i], i + 1, max - i));
+                isSuccess = true;
+                printlnAdv(format("Số %d đối xứng ở cặp vị trí %d và %d.", args[i], i + 1, max - i));
             }
         }
         // check back
-        if (!is_success) {
-            PrintlnAdv("Không có cặp số đối xứng nào.");
+        if (!isSuccess) {
+            printlnAdv("Không có cặp số đối xứng nào.");
         }
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

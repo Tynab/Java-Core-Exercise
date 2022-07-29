@@ -1,39 +1,39 @@
 package bai_tap_nop;
 
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava1 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 1");
+        printlnAdv("Bài Tập Java 1");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final int _rMax = 15;
-    private static final int _cMax = 46;
-    private static final int _rChange = 10;
-    private static final int _cChange = 12;
+    private static final int R_MAX = 15;
+    private static final int C_MAX = 46;
+    private static final int R_CHANGE = 10;
+    private static final int C_CHANGE = 12;
 
     // Main
-    private static void Main() {
+    private static void run() {
         out.println(YELLOW);
-        for (var i = 1; i <= _rMax; i++) {
+        for (var i = 1; i <= R_MAX; i++) {
             var str = "";
-            if (i < _rChange) {
-                for (var j = 1; j <= _cMax; j++) {
-                    str += j < _cChange ? (j - i) % 2 == 0 ? "*" : " " : j == _cChange ? " " : "=";
+            if (i < R_CHANGE) {
+                for (var j = 1; j <= C_MAX; j++) {
+                    str += j < C_CHANGE ? (j - i) % 2 == 0 ? "*" : " " : j == C_CHANGE ? " " : "=";
                 }
             } else {
-                for (var j = 1; j <= _cMax; j++) {
+                for (var j = 1; j <= C_MAX; j++) {
                     str += "=";
                 }
             }
-            PrintlnAdv(str);
+            printlnAdv(str);
         }
         out.println(RESET);
     }

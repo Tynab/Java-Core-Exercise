@@ -7,98 +7,98 @@ import static java.lang.String.*;
 import static java.lang.System.*;
 import static java.util.Collections.max;
 import static java.util.Collections.min;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava13 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 13");
+        printlnAdv("Bài Tập Java 13");
         // content
-        Main();
+        run();
     }
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào số phần tử mảng: ", RESET);
-        var n = NumLimit(1, MAX_VALUE); // pin out loop
-        List<Integer> list = new ArrayList<>();
+        printAdv(GREEN, "Nhập vào số phần tử mảng: ", RESET);
+        var n = numLimit(1, MAX_VALUE); // pin out loop
+        var list = new ArrayList<Integer>();
         for (var i = 0; i < n; i++) {
-            PrintAdv(GREEN, format("Nhập phần tử thứ %d: ", i + 1), RESET);
-            list.add(ScanInt());
+            printAdv(GREEN, format("Nhập phần tử thứ %d: ", i + 1), RESET);
+            list.add(scanInt());
         }
         // cap
         out.print(CYAN);
-        PrintlnAdv("1. Tính giá trị trung bình             ");
-        PrintlnAdv("2. Tìm phần tử lớn nhất, nhỏ nhất      ");
-        PrintlnAdv("3. Tìm phần tử âm lớn nhất, nhỏ nhất   ");
-        PrintlnAdv("4. Tìm phần tử dương lớn nhất, nhỏ nhất");
-        PrintlnAdv("5. In ra các phần tử chẵn, lẻ          ");
-        PrintlnAdv("6. Thêm một phần tử theo vị trí        ");
-        PrintlnAdv("7. Xóa một phần tử theo vị trí         ");
-        PrintAdv("Chọn 1 trong các phương án trên: ");
+        printlnAdv("1. Tính giá trị trung bình             ");
+        printlnAdv("2. Tìm phần tử lớn nhất, nhỏ nhất      ");
+        printlnAdv("3. Tìm phần tử âm lớn nhất, nhỏ nhất   ");
+        printlnAdv("4. Tìm phần tử dương lớn nhất, nhỏ nhất");
+        printlnAdv("5. In ra các phần tử chẵn, lẻ          ");
+        printlnAdv("6. Thêm một phần tử theo vị trí        ");
+        printlnAdv("7. Xóa một phần tử theo vị trí         ");
+        printAdv("Chọn 1 trong các phương án trên: ");
         out.print(RESET);
         // output
-        switch (NumLimit(1, 7)) {
+        switch (numLimit(1, 7)) {
             case 1: {
-                UnitA(list);
+                unitA(list);
                 break;
             }
             case 2: {
-                UnitB(list);
+                unitB(list);
                 break;
             }
             case 3: {
-                UnitC(list);
+                unitC(list);
                 break;
             }
             case 4: {
-                UnitD(list);
+                unitD(list);
                 break;
             }
             case 5: {
-                UnitE(list);
+                unitE(list);
                 break;
             }
             case 6: {
-                UnitF(list);
+                unitF(list);
                 break;
             }
             case 7: {
-                UnitG(list);
+                unitG(list);
                 break;
             }
         }
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Unit 1
-    private static void UnitA(List<Integer> list) {
+    private static void unitA(List<Integer> list) {
         // sum
         var sum = 0;
         for (var item : list) {
             sum += item;
         }
         // average
-        PrintlnAdv(YELLOW, format("Giá trị trung bình của mảng là: %s", WritePerfectDub((double) sum / list.size())));
+        printlnAdv(YELLOW, format("Giá trị trung bình của mảng là: %s", writePerfectDub((double) sum / list.size())));
     }
 
     // Unit 2
-    private static void UnitB(List<Integer> list) {
+    private static void unitB(List<Integer> list) {
         out.print(YELLOW);
-        PrintlnAdv(format("Phần tử lớn nhất trong mảng là: %d", max(list)));
-        PrintlnAdv(format("Phần tử nhỏ nhất trong mảng là: %d", min(list)));
+        printlnAdv(format("Phần tử lớn nhất trong mảng là: %d", max(list)));
+        printlnAdv(format("Phần tử nhỏ nhất trong mảng là: %d", min(list)));
     }
 
     // Unit 3
-    private static void UnitC(List<Integer> list) {
+    private static void unitC(List<Integer> list) {
         // scan
-        List<Integer> resList = new ArrayList<>();
+        var resList = new ArrayList<Integer>();
         for (var item : list) {
             if (item < 0) {
                 resList.add(item);
@@ -107,17 +107,17 @@ public class BaiTapJava13 {
         // check back
         out.print(YELLOW);
         if (resList.size() > 0) {
-            PrintlnAdv(format("Phần tử âm lớn nhất trong mảng là: %d", max(resList)));
-            PrintlnAdv(format("Phần tử âm nhỏ nhất trong mảng là: %d", min(resList)));
+            printlnAdv(format("Phần tử âm lớn nhất trong mảng là: %d", max(resList)));
+            printlnAdv(format("Phần tử âm nhỏ nhất trong mảng là: %d", min(resList)));
         } else {
-            PrintlnAdv("Mảng không có phần tử âm.");
+            printlnAdv("Mảng không có phần tử âm.");
         }
     }
 
     // Unit 4
-    private static void UnitD(List<Integer> list) {
+    private static void unitD(List<Integer> list) {
         // scan
-        List<Integer> resList = new ArrayList<>();
+        var resList = new ArrayList<Integer>();
         for (var item : list) {
             if (item > 0) {
                 resList.add(item);
@@ -126,17 +126,17 @@ public class BaiTapJava13 {
         // check back
         out.print(YELLOW);
         if (resList.size() > 0) {
-            PrintlnAdv(format("Phần tử dương lớn nhất trong mảng là: %d", max(resList)));
-            PrintlnAdv(format("Phần tử dương nhỏ nhất trong mảng là: %d", min(resList)));
+            printlnAdv(format("Phần tử dương lớn nhất trong mảng là: %d", max(resList)));
+            printlnAdv(format("Phần tử dương nhỏ nhất trong mảng là: %d", min(resList)));
         } else {
-            PrintlnAdv("Mảng không có phần tử dương.");
+            printlnAdv("Mảng không có phần tử dương.");
         }
     }
 
     // Unit 5
-    private static void UnitE(List<Integer> list) {
+    private static void unitE(List<Integer> list) {
         // transfer
-        List<Integer> shortList = new ArrayList<>();
+        var shortList = new ArrayList<Integer>();
         for (var item : list) {
             if (!shortList.contains(item)) {
                 shortList.add(item);
@@ -155,54 +155,54 @@ public class BaiTapJava13 {
         out.print(YELLOW);
         // even
         if (sEven.length() > 2) {
-            PrintlnAdv(format("Các phần tử chẵn trong mảng là: %s", sEven.substring(2)));
+            printlnAdv(format("Các phần tử chẵn trong mảng là: %s", sEven.substring(2)));
         } else {
-            PrintlnAdv("Mảng không có phần tử chẵn.");
+            printlnAdv("Mảng không có phần tử chẵn.");
         }
         // odd
         if (sOdd.length() > 2) {
-            PrintlnAdv(format("Các phần tử lẻ trong mảng là: %s", sOdd.substring(2)));
+            printlnAdv(format("Các phần tử lẻ trong mảng là: %s", sOdd.substring(2)));
         } else {
-            PrintlnAdv("Mảng không có phần tử lẻ.");
+            printlnAdv("Mảng không có phần tử lẻ.");
         }
     }
 
     // Unit 6
-    private static void UnitF(List<Integer> list) {
+    private static void unitF(List<Integer> list) {
         // input
-        PrintAdv(GREEN, "Nhập số muốn thêm vào mảng: ", RESET);
-        var x = ScanInt();
-        PrintAdv(GREEN, "Nhập vị trí phần tử mới cần chèn trong mảng: ", RESET);
+        printAdv(GREEN, "Nhập số muốn thêm vào mảng: ", RESET);
+        var x = scanInt();
+        printAdv(GREEN, "Nhập vị trí phần tử mới cần chèn trong mảng: ", RESET);
         var max = list.size();
         // process
-        list.add(NumLimit(1, max + 1) - 1, x);
+        list.add(numLimit(1, max + 1) - 1, x);
         // output
         var s = String.valueOf(list.get(0));
         for (var i = 1; i <= max; i++) {
             s += format(", %d", list.get(i));
         }
-        PrintlnAdv(YELLOW, format("Mảng mới là: %s", s));
+        printlnAdv(YELLOW, format("Mảng mới là: %s", s));
     }
 
     // Unit 7
-    private static void UnitG(List<Integer> list) {
+    private static void unitG(List<Integer> list) {
         // input
-        PrintAdv(GREEN, "Nhập vị trí phần tử cần xóa trong mảng: ", RESET);
+        printAdv(GREEN, "Nhập vị trí phần tử cần xóa trong mảng: ", RESET);
         var max = list.size();
         // add
-        list.remove(NumLimit(1, max) - 1);
+        list.remove(numLimit(1, max) - 1);
         // output
         var s = String.valueOf(list.get(0));
         for (var i = 1; i < max - 1; i++) {
             s += format(", %d", list.get(i));
         }
-        PrintlnAdv(YELLOW, format("Mảng mới là: %s", s));
+        printlnAdv(YELLOW, format("Mảng mới là: %s", s));
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

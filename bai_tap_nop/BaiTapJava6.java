@@ -4,37 +4,37 @@ import java.util.*;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava6 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 6");
+        printlnAdv("Bài Tập Java 6");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final Scanner _scan = new Scanner(in);
+    private static final Scanner scan = new Scanner(in);
 
     // Main
-    private static void Main() {
+    private static void run() {
         // cap
         out.println();
-        PrintAdv(GREEN, "Nhập vào chuỗi: ", RESET);
+        printAdv(GREEN, "Nhập vào chuỗi: ", RESET);
         // output
-        PrintlnAdv(YELLOW, format("Chuỗi đảo ngược là: %s", new StringBuilder(_scan.nextLine()).reverse().toString()));
+        printlnAdv(YELLOW, format("Chuỗi đảo ngược là: %s", new StringBuilder(scan.nextLine()).reverse().toString()));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

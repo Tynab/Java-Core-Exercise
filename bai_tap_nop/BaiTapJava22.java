@@ -4,38 +4,38 @@ import java.util.*;
 
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class BaiTapJava22 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("Bài Tập Java 22");
+        printlnAdv("Bài Tập Java 22");
         // content
-        Main();
+        run();
     }
 
     // Fields
-    private static final Scanner _scan = new Scanner(in);
+    private static final Scanner scan = new Scanner(in);
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào chuỗi: ", RESET);
-        var str = _scan.nextLine();
+        printAdv(GREEN, "Nhập vào chuỗi: ", RESET);
+        var str = scan.nextLine();
         // output
-        var res = Handle(str);
+        var res = handle(str);
         var sOut = res.length() > 0 ? format("Chuỗi palindromic là: %s", res) : "Không tìm thấy chuỗi palindromic.";
-        PrintlnAdv(YELLOW, sOut);
+        printlnAdv(YELLOW, sOut);
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Handle
-    private static String Handle(String str) {
+    private static String handle(String str) {
         var s = "";
         var strReverse = new StringBuilder(str).reverse().toString();
         for (var i = 0; i < str.length() / 2; i++) {
@@ -50,9 +50,9 @@ public class BaiTapJava22 {
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }

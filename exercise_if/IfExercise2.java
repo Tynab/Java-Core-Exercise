@@ -3,40 +3,40 @@ package exercise_if;
 import static java.lang.Integer.*;
 import static java.lang.String.*;
 import static java.lang.System.*;
-import static yan_lib.YANConstant.*;
-import static yan_lib.YANMethod.*;
+import static yan_service.YANConstant.*;
+import static yan_service.YANService.*;
 
 public class IfExercise2 {
     public static void main(String[] args) {
         // tit
         out.println(BLUE_BOLD);
-        PrintlnAdv("If Exersice 2");
+        printlnAdv("If Exersice 2");
         // content
-        Main();
+        run();
     }
 
     // Main
-    private static void Main() {
+    private static void run() {
         // input
         out.println();
-        PrintAdv(GREEN, "Nhập vào số tự nhiên: ", RESET);
-        var n = NumLimit(0, MAX_VALUE);
+        printAdv(GREEN, "Nhập vào số tự nhiên: ", RESET);
+        var n = numLimit(0, MAX_VALUE);
         // output
-        PrintlnAdv(YELLOW, format("Số %d có %d chữ số.", n, NumCounter(n)));
+        printlnAdv(YELLOW, format("Số %d có %d chữ số.", n, numCounter(n)));
         out.println();
         // ctrl
-        CheckOut();
+        checkOut();
     }
 
     // Number counter
-    private static int NumCounter(int n) {
+    private static int numCounter(int n) {
         return String.valueOf(n).length();
     }
 
     // Check out
-    private static void CheckOut() {
-        if (Credit() == 1) {
-            Main();
+    private static void checkOut() {
+        if (credit() == 1) {
+            run();
         }
     }
 }
