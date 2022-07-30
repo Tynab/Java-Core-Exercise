@@ -15,7 +15,7 @@ public class BaiTapJava3 {
     }
 
     // Fields
-    private static final String[] KEY = {
+    private static final String[] mKey = {
             "java.version",
             "java.version.date",
             "java.vendor",
@@ -47,7 +47,7 @@ public class BaiTapJava3 {
     // Main
     private static void run() {
         out.println(YELLOW);
-        for (var item : KEY) {
+        for (var item : mKey) {
             out.println(format("\t・%s: %s", toLowerCaseAdv(item.replace('.', ' ')), getProperty(item)));
         }
         out.println(RESET);

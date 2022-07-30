@@ -11,7 +11,7 @@ import static yan_service.YANConstant.*;
 
 public class YANService {
     // Fields
-    private static final Scanner scan = new Scanner(in);
+    private static final Scanner mScan = new Scanner(in);
 
     // Parse int advanced
     public static int parseIntAdv(Character c) {
@@ -43,7 +43,7 @@ public class YANService {
     // Scan int
     public static int scanInt() {
         var n = 0;
-        var s = scan.nextLine();
+        var s = mScan.nextLine();
         if (tryParseInt(s)) {
             n = parseInt(s);
         } else {
@@ -103,7 +103,7 @@ public class YANService {
     // Scan double
     public static double scanDub() {
         var n = 0d;
-        var s = scan.nextLine();
+        var s = mScan.nextLine();
         if (tryParseDub(s)) {
             n = parseDouble(s);
         } else {

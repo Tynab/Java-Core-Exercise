@@ -17,8 +17,8 @@ public class ListExercise {
     }
 
     // Fields
-    private static final Scanner scan = new Scanner(in);
     private static final int N_MAX = 2;
+    private static final Scanner mScan = new Scanner(in);
 
     // Main
     private static void run() {
@@ -27,7 +27,7 @@ public class ListExercise {
         var list = new ArrayList<String>();
         for (var i = 0; i < N_MAX; i++) {
             printAdv(GREEN, format("Nhập chuỗi thứ %d: ", i + 1), RESET);
-            list.add(scan.nextLine());
+            list.add(mScan.nextLine());
         }
         // cap
         printlnAdv(CYAN, "Phân biệt chữ hoa chữ thường?");

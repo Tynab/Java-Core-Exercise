@@ -17,7 +17,7 @@ public class BaiTapJava6 {
     }
 
     // Fields
-    private static final Scanner scan = new Scanner(in);
+    private static final Scanner mScan = new Scanner(in);
 
     // Main
     private static void run() {
@@ -25,7 +25,7 @@ public class BaiTapJava6 {
         out.println();
         printAdv(GREEN, "Nhập vào chuỗi: ", RESET);
         // output
-        printlnAdv(YELLOW, format("Chuỗi đảo ngược là: %s", new StringBuilder(scan.nextLine()).reverse().toString()));
+        printlnAdv(YELLOW, format("Chuỗi đảo ngược là: %s", new StringBuilder(mScan.nextLine()).reverse().toString()));
         out.println();
         // ctrl
         checkOut();

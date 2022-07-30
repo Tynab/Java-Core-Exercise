@@ -18,7 +18,7 @@ public class BaiTapJava17 {
 
     // Fields
     private static final int LIMIT = 1000;
-    private static int counter;
+    private static int mCounter;
 
     // Main
     private static void run() {
@@ -26,7 +26,7 @@ public class BaiTapJava17 {
         out.println();
         printAdv(GREEN, "Nhập vào số dự đoán từ 1 đến 1000: ", RESET);
         // process
-        counter = 0;
+        mCounter = 0;
         guessX(new Random().nextInt(LIMIT - 1) + 1);
         out.println();
         // ctrl
@@ -35,7 +35,7 @@ public class BaiTapJava17 {
 
     // Guess x
     private static void guessX(int x) {
-        counter++;
+        mCounter++;
         var n = numLimit(1, LIMIT);
         if (n < x) {
             printAdv(RED, "Nhỏ hơn số cần tìm, mời đoán lại: ", RESET);
@@ -44,7 +44,7 @@ public class BaiTapJava17 {
             printAdv(RED, "Lớn hơn số cần tìm, mời đoán lại: ", RESET);
             guessX(x);
         } else {
-            printlnAdv(YELLOW, format("CHÍNH XÁC! Đoán sai %d lần.", counter));
+            printlnAdv(YELLOW, format("CHÍNH XÁC! Đoán sai %d lần.", mCounter));
         }
     }
 

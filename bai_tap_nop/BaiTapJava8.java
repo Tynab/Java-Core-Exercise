@@ -17,7 +17,7 @@ public class BaiTapJava8 {
     }
 
     // Fields
-    private static final Scanner scan = new Scanner(in);
+    private static final Scanner mScan = new Scanner(in);
 
     // Main
     private static void run() {
@@ -25,7 +25,7 @@ public class BaiTapJava8 {
         out.println();
         printAdv(GREEN, "Nhập vào chuỗi: ", RESET);
         // output
-        printlnAdv(YELLOW, format("Chuỗi in hoa mỗi ký tự đầu là: %s", toTitleCaseAdv(scan.nextLine())));
+        printlnAdv(YELLOW, format("Chuỗi in hoa mỗi ký tự đầu là: %s", toTitleCaseAdv(mScan.nextLine())));
         out.println();
         // ctrl
         checkOut();

@@ -16,7 +16,7 @@ public class BaiTapJava16 {
     }
 
     // Fields
-    private static final int YEAR_START = 1900;
+    private static final int YEAR_RESTART = 1900;
 
     // Main
     private static void run() {
@@ -26,7 +26,7 @@ public class BaiTapJava16 {
         var year = yearLimit(MAX_VALUE);
         // output
         out.print(YELLOW);
-        if (year == YEAR_START || year % 4 != 0) {
+        if (year == YEAR_RESTART || year % 4 != 0) {
             printlnAdv(format("Năm %d là năm không nhuận.", year));
         } else {
             printlnAdv(format("Năm %d là năm nhuận.", year));
@@ -39,8 +39,8 @@ public class BaiTapJava16 {
     // Year limit
     private static int yearLimit(int max) {
         var n = scanInt();
-        if (n < YEAR_START) {
-            printAdv(RED, format("Không xác định được lịch trước năm %d, xin nhập lại: ", YEAR_START), RESET);
+        if (n < YEAR_RESTART) {
+            printAdv(RED, format("Không xác định được lịch trước năm %d, xin nhập lại: ", YEAR_RESTART), RESET);
             n = yearLimit(max);
         } else if (n > max) {
             printAdv(RED, "Không xác định, xin nhập lại: ", RESET);

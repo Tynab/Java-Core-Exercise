@@ -17,14 +17,14 @@ public class BaiTapJava15 {
     }
 
     // Fields
-    private static final Scanner scan = new Scanner(in);
+    private static final Scanner mScan = new Scanner(in);
 
     // Main
     private static void run() {
         // cap
         out.println();
         printAdv(GREEN, "Nhập vào chuỗi: ", RESET);
-        var s = scan.nextLine();
+        var s = mScan.nextLine();
         // cap
         out.print(CYAN);
         printlnAdv("1. In ra độ dài chuỗi                  ");
@@ -83,7 +83,7 @@ public class BaiTapJava15 {
         printAdv(GREEN, "Nhập chuỗi cần tìm: ", RESET);
         // process
         var list = new ArrayList<Integer>();
-        getAllIndexOf(list, s, scan.nextLine(), 0);
+        getAllIndexOf(list, s, mScan.nextLine(), 0);
         // out put
         out.print(YELLOW);
         var max = list.size();

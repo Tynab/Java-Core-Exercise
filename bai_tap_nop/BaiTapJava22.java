@@ -17,14 +17,14 @@ public class BaiTapJava22 {
     }
 
     // Fields
-    private static final Scanner scan = new Scanner(in);
+    private static final Scanner mScan = new Scanner(in);
 
     // Main
     private static void run() {
         // input
         out.println();
         printAdv(GREEN, "Nhập vào chuỗi: ", RESET);
-        var str = scan.nextLine();
+        var str = mScan.nextLine();
         // output
         var res = handle(str);
         var sOut = res.length() > 0 ? format("Chuỗi palindromic là: %s", res) : "Không tìm thấy chuỗi palindromic.";

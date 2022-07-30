@@ -19,7 +19,7 @@ public class BaiTapJava2 {
     }
 
     // Fields
-    private static final Scanner scan = new Scanner(in);
+    private static final Scanner mScan = new Scanner(in);
 
     // Main
     private static void run() {
@@ -41,7 +41,7 @@ public class BaiTapJava2 {
 
     // Scan binary
     private static String scanBin() {
-        var s = scan.nextLine();
+        var s = mScan.nextLine();
         for (var i = 0; i < s.length(); i++) {
             var c = s.charAt(i);
             if (c != '1' && c != '0') {
